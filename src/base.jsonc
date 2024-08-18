@@ -1,0 +1,158 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"files": {
+		"ignore": [".idea/", "node_modules/"]
+	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		},
+		"linter": {
+			"enabled": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			//
+			// Prefer to take advantage of Automatic Semicolon Insertion (ASI), which is always present in JavaScript.
+			"semicolons": "asNeeded"
+		}
+	},
+	"linter": {
+		"rules": {
+			"all": true,
+			"correctness": {
+				//
+				// Wait for this rule to support types nested in namespaces before enabling it.
+				"noUndeclaredVariables": "off"
+			},
+			"style": {
+				//
+				// Prefer HTML-like boolean props in JSX.
+				"noImplicitBoolean": "off",
+				//
+				// Support types nested in namespaces.
+				"noNamespace": "off",
+				//
+				// Prefer `Array<T>` to remain consistent with the built-in types for `Set<T>` and `Map<K, V>`.
+				"useConsistentArrayType": {
+					"level": "error",
+					"options": { "syntax": "generic" }
+				},
+				//
+				// Prefer PascalCase as the only naming convention to keep filenames simple and consistent.
+				"useFilenamingConvention": {
+					"level": "error",
+					"options": {
+						"filenameCases": ["PascalCase"]
+					}
+				},
+				//
+				// Relax the naming conventions.
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"conventions": [
+							//
+							// Ignore object literals for third-party compatibility reasons.
+							{
+								"selector": {
+									"kind": "objectLiteralMember",
+									"scope": "any"
+								},
+								"match": ".*"
+							}
+						]
+					}
+				},
+				//
+				// `lint/style/useConsistentArrayType` supersedes this rule.
+				"useShorthandArrayType": "off"
+			},
+			"suspicious": {
+				//
+				// Allow async modifiers on any function for maintainability and consistency.
+				// TypeScript is able to detect incorrect use of the resulting promises.
+				"useAwait": "off"
+			},
+			"nursery": {
+				"all": true,
+				//
+				// Wait for this rule to support path aliases in tsconfig.json before enabling it.
+				"noUndeclaredDependencies": "off",
+				//
+				// Prefer to take advantage of union exhaustiveness checking in TypeScript.
+				"useDefaultSwitchClause": "off",
+				//
+				// Wait for this rule to support more scenarios in Tailwind CSS before enabling it.
+				"useSortedClasses": "off"
+			}
+		}
+	},
+	"overrides": [
+		//
+		// Provide support for ambient TypeScript modules (i.e. type declaration files).
+		{
+			"include": ["src/**/*.d.ts"],
+			"linter": {
+				"rules": {
+					"style": {
+						//
+						// Relax the naming conventions.
+						"useNamingConvention": {
+							"level": "error",
+							"options": {
+								"conventions": [
+									//
+									// Ignore properties for third-party compatibility reasons.
+									{
+										"selector": {
+											"kind": "typeProperty",
+											"scope": "any"
+										},
+										"match": ".*"
+									}
+								],
+								//
+								// Allow consecutive uppercase letters for third-party compatibility reasons.
+								"strictCase": false
+							}
+						}
+					}
+				}
+			}
+		},
+		//
+		// Provide support for configuration files in a Node.js- and ESM-based toolchain.
+		{
+			"include": ["*.config.js", "*.config.ts"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						//
+						// Allow importing Node.js-specific modules such as `node:path` and `node:url` in configuration files.
+						"noNodejsModules": "off"
+					},
+					"style": {
+						//
+						// Allow default exports in configuration files.
+						"noDefaultExport": "off",
+						//
+						// Allow the kebab-case naming convention motivated by the `.config.{js,ts}` extension.
+						"useFilenamingConvention": {
+							"level": "error",
+							"options": {
+								"filenameCases": ["kebab-case"]
+							}
+						}
+					},
+					"nursery": {
+						//
+						// Allow relative import statements in configuration files.
+						"useImportRestrictions": "off"
+					}
+				}
+			}
+		}
+	]
+}
