@@ -1,5 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
+	"bugs": "https://github.com/rainstormy/presets-biome/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rainstormy/presets-biome.git"
+	},
+	"license": "MIT",
+	"author": "Steffen Diswal",
 	"type": "module",
 	"exports": {
 		"./base": "./src/base.jsonc",
