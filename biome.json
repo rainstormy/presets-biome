@@ -3,5 +3,25 @@
 	"extends": ["src/base.jsonc"],
 	"files": {
 		"ignore": [".idea/", "dist/", "node_modules/"]
-	}
+	},
+	"overrides": [
+		{
+			"include": ["build.js"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noNodejsModules": "off"
+					},
+					"style": {
+						"useFilenamingConvention": {
+							"level": "error",
+							"options": {
+								"filenameCases": ["kebab-case"]
+							}
+						}
+					}
+				}
+			}
+		}
+	]
 }
