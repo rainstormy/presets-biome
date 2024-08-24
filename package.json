@@ -1,11 +1,29 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/presets-biome",
+	"version": "0.0.0",
+	"description": "Predefined, opinionated Biome configurations suitable for any web project.",
+	"keywords": ["biome", "formatter", "formatting", "linter", "linting"],
+	"bugs": "https://github.com/rainstormy/presets-biome/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rainstormy/presets-biome.git"
+	},
+	"license": "MIT",
+	"author": "Steffen Diswal",
 	"type": "module",
+	"exports": {
+		"./base": "./dist/base.json",
+		"./nextjs": "./dist/nextjs.json",
+		"./storybook": "./dist/storybook.json",
+		"./test": "./dist/test.json"
+	},
 	"packageManager": "pnpm@9.5.0+sha256.dbdf5961c32909fb030595a9daa1dae720162e658609a8f92f2fa99835510ca5",
 	"engines": {
 		"node": ">=20.0.0"
 	},
 	"scripts": {
+		"build": "node ./build.js",
 		"check": "pnpm check.fmt",
 		"check.fmt": "biome check --error-on-warnings",
 		"fmt": "biome check --write"

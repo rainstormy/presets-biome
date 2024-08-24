@@ -1,0 +1,86 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"files": {
+		"ignore": [".next/"]
+	},
+	"overrides": [
+		//
+		// Provide support for React components.
+		{
+			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			"linter": {
+				"rules": {
+					"nursery": {
+						//
+						// Allow React-specific props such as `className` and `htmlFor`.
+						"noReactSpecificProps": "off"
+					}
+				}
+			}
+		},
+		//
+		// Provide support for the Next.js app router.
+		// https://nextjs.org/docs/app/api-reference/file-conventions
+		{
+			"include": [
+				"src/app/**/apple-icon.tsx",
+				"src/app/**/default.tsx",
+				"src/app/**/error.tsx",
+				"src/app/**/global-error.tsx",
+				"src/app/**/icon.tsx",
+				"src/app/**/layout.tsx",
+				"src/app/**/loading.tsx",
+				"src/app/**/not-found.tsx",
+				"src/app/**/opengraph-image.tsx",
+				"src/app/**/page.tsx",
+				"src/app/**/sitemap.ts",
+				"src/app/**/template.tsx",
+				"src/app/**/twitter-image.tsx",
+				"src/app/manifest.ts",
+				"src/app/robots.ts"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						//
+						// Allow default exports of pages and layouts required by Next.js.
+						"noDefaultExport": "off",
+						//
+						// Allow the kebab-case naming convention required by Next.js.
+						"useFilenamingConvention": {
+							"level": "error",
+							"options": {
+								"filenameCases": ["kebab-case"]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"include": [
+				"src/app/**/route.ts",
+				"src/instrumentation.ts",
+				"src/instrumentation-edge.ts",
+				"src/instrumentation-node.ts",
+				"src/mdx-components.tsx",
+				"src/middleware.ts",
+				"next-env.d.ts"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						//
+						// Allow the kebab-case naming convention required by Next.js.
+						"useFilenamingConvention": {
+							"level": "error",
+							"options": {
+								"filenameCases": ["kebab-case"]
+							}
+						}
+					}
+				}
+			}
+		}
+	]
+}
