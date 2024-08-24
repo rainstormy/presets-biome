@@ -1,5 +1,9 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@rainstormy/presets-biome",
+	"version": "0.0.0",
+	"description": "Predefined, opinionated Biome configurations suitable for any web project.",
+	"keywords": ["biome", "formatter", "formatting", "linter", "linting"],
 	"bugs": "https://github.com/rainstormy/presets-biome/issues",
 	"repository": {
 		"type": "git",
