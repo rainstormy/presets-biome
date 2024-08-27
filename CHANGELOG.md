@@ -10,6 +10,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - New preset: `@rainstormy/presets-biome/base`.
 - New preset: `@rainstormy/presets-biome/nextjs`.
 - New preset: `@rainstormy/presets-biome/storybook`.
-- New preset: `@rainstormy/presets-biome/test`.
+- New preset: `@rainstormy/presets-biome/vitest`.
 
 [unreleased]: https://github.com/rainstormy/presets-biome

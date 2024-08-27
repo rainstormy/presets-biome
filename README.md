@@ -70,9 +70,9 @@ For example:
 }
 ```
 
-### With Jest/Vitest
-Extend `@rainstormy/presets-biome/test` to adjust the linter to
-support [Jest](https://jestjs.io) and [Vitest](https://vitest.dev) test suites.
+### With Vitest
+Extend `@rainstormy/presets-biome/vitest` to adjust the linter to
+support [Vitest](https://vitest.dev) test suites.
 
 For example:
 
@@ -81,7 +81,7 @@ For example:
     "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
     "extends": [
         "@rainstormy/presets-biome/base",
-        "@rainstormy/presets-biome/test"
+        "@rainstormy/presets-biome/vitest"
     ]
 }
 ```
@@ -98,7 +98,7 @@ For example:
         "@rainstormy/presets-biome/base",
         "@rainstormy/presets-biome/nextjs",
         "@rainstormy/presets-biome/storybook",
-        "@rainstormy/presets-biome/test"
+        "@rainstormy/presets-biome/vitest"
     ],
     "files": {
         "ignore": ["public/", "terraform/"]
