@@ -2,7 +2,7 @@
 	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
 	"overrides": [
 		//
-		// Provide support for unit testing frameworks.
+		// Provide support for unit test suites in Vitest.
 		{
 			"include": [
 				"src/**/*.mock.ts",
