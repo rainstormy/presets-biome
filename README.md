@@ -27,67 +27,17 @@ Create a [`biome.json`](https://biomejs.dev/reference/configuration) file and
 extend `@rainstormy/presets-biome/base` to enable opinionated formatting and
 linting.
 
-For example:
+In addition to this, you can extend some of the following configurations to
+refine the Biome settings for your project:
 
-```json
-{
-    "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-    "extends": [
-        "@rainstormy/presets-biome/base"
-    ]
-}
-```
+| Configuration                         | Description                                                               |
+|---------------------------------------|---------------------------------------------------------------------------|
+| `@rainstormy/presets-biome/nextjs`    | Adds support for [Next.js](https://nextjs.org) apps using the app router. |
+| `@rainstormy/presets-biome/storybook` | Adds support for [Storybook](https://storybook.js.org) stories.           |
+| `@rainstormy/presets-biome/vitest`    | Adds support for [Vitest](https://vitest.dev) test suites.                |
 
-### With Next.js
-Extend `@rainstormy/presets-biome/nextjs` to adjust the linter to
-support [Next.js](https://nextjs.org) apps using the app router:
-
-For example:
-
-```json
-{
-    "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-    "extends": [
-        "@rainstormy/presets-biome/base",
-        "@rainstormy/presets-biome/nextjs"
-    ]
-}
-```
-
-### With Storybook
-Extend `@rainstormy/presets-biome/storybook` to adjust the linter to
-support [Storybook](https://storybook.js.org) stories:
-
-For example:
-
-```json
-{
-    "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-    "extends": [
-        "@rainstormy/presets-biome/base",
-        "@rainstormy/presets-biome/storybook"
-    ]
-}
-```
-
-### With Vitest
-Extend `@rainstormy/presets-biome/vitest` to adjust the linter to
-support [Vitest](https://vitest.dev) test suites.
-
-For example:
-
-```json
-{
-    "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-    "extends": [
-        "@rainstormy/presets-biome/base",
-        "@rainstormy/presets-biome/vitest"
-    ]
-}
-```
-
-### Override settings
-Specify the desired options like `files` and `overrides` as usual.
+You can override the predefined settings by specifying the desired options like
+`files` and `overrides` as usual.
 
 For example:
 
@@ -118,7 +68,10 @@ For example:
                             "level": "error",
                             "options": {
                                 "hooks": [
-                                    { "name": "useWindowEvent", "stableResult": true }
+                                    {
+                                        "name": "useWindowEvent",
+                                        "stableResult": true
+                                    }
                                 ]
                             }
                         }
@@ -132,6 +85,5 @@ For example:
 
 ### Eject from the preset
 Copy the relevant parts of
-the [JSON files in this package](https://github.com/rainstormy/presets-biome/tree/main/src)
-and insert them directly into the `biome.json` file instead of extending the
-presets. Make adjustments as needed.
+the [preset source files](https://github.com/rainstormy/presets-biome/tree/main/src)
+and insert them directly into the `biome.json` file. Make adjustments as needed.
