@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.9.1/schema.json",
 	"files": {
 		"ignore": [".next/"]
 	},
@@ -10,7 +10,7 @@
 			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
 			"linter": {
 				"rules": {
-					"nursery": {
+					"suspicious": {
 						//
 						// Allow React-specific props such as `className` and `htmlFor`.
 						"noReactSpecificProps": "off"
