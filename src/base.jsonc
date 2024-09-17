@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.9.1/schema.json",
 	"files": {
 		"ignore": [".idea/", "node_modules/"]
 	},
@@ -23,6 +23,9 @@
 			"all": true,
 			"correctness": {
 				//
+				// Wait for this rule to support path aliases in tsconfig.json before enabling it.
+				"noUndeclaredDependencies": "off",
+				//
 				// Wait for this rule to support types nested in namespaces before enabling it.
 				"noUndeclaredVariables": "off"
 			},
@@ -39,6 +42,9 @@
 					"level": "error",
 					"options": { "syntax": "generic" }
 				},
+				//
+				// Prefer to take advantage of union exhaustiveness checking in TypeScript.
+				"useDefaultSwitchClause": "off",
 				//
 				// Prefer PascalCase as the only naming convention to keep filenames simple and consistent.
 				"useFilenamingConvention": {
@@ -77,12 +83,6 @@
 			},
 			"nursery": {
 				"all": true,
-				//
-				// Wait for this rule to support path aliases in tsconfig.json before enabling it.
-				"noUndeclaredDependencies": "off",
-				//
-				// Prefer to take advantage of union exhaustiveness checking in TypeScript.
-				"useDefaultSwitchClause": "off",
 				//
 				// Wait for this rule to support more scenarios in Tailwind CSS before enabling it.
 				"useSortedClasses": "off"
