@@ -79,7 +79,7 @@ For example:
 
 ```json
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
     "extends": [
         "@rainstormy/presets-biome/base",
         "@rainstormy/presets-biome/nextjs",
