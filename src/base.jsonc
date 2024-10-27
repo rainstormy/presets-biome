@@ -24,18 +24,12 @@
 			"correctness": {
 				//
 				// Wait for this rule to support path aliases in tsconfig.json before enabling it.
-				"noUndeclaredDependencies": "off",
-				//
-				// Wait for this rule to support types nested in namespaces before enabling it.
-				"noUndeclaredVariables": "off"
+				"noUndeclaredDependencies": "off"
 			},
 			"style": {
 				//
 				// Prefer HTML-like boolean props in JSX.
 				"noImplicitBoolean": "off",
-				//
-				// Support types nested in namespaces.
-				"noNamespace": "off",
 				//
 				// Prefer `Array<T>` to remain consistent with the built-in types for `Set<T>` and `Map<K, V>`.
 				"useConsistentArrayType": {

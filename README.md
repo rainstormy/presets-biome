@@ -19,9 +19,6 @@ Biome with a few twists:
 * **Use the generic `Array<T>` type** instead of the shorthand `T[]` syntax to
   make arrays of union types cleaner and to remain consistent with other
   built-in types such as `Set<T>`, `Map<K, V>`, and `Promise<T>`.
-* **Allow type declarations to be nested in namespaces** to improve
-  discoverability for code completion and to reduce the cognitive load of
-  inventing unique names in groups of related type declarations.
 * **Use PascalCase for filenames** in general to make the filenames consistent
   with type declaration names and component names and to reduce the cognitive
   load of having to consider multiple file naming conventions.
