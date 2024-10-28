@@ -4,24 +4,20 @@
 		"ignore": [".next/"]
 	},
 	"overrides": [
-		//
-		// Provide support for React components.
 		{
+			// Provide support for React components.
 			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
 			"linter": {
 				"rules": {
 					"suspicious": {
-						//
-						// Allow React-specific props such as `className` and `htmlFor`.
-						"noReactSpecificProps": "off"
+						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
 					}
 				}
 			}
 		},
-		//
-		// Provide support for the Next.js app router.
-		// https://nextjs.org/docs/app/api-reference/file-conventions
 		{
+			// Provide support for the Next.js app router.
+			// https://nextjs.org/docs/app/api-reference/file-conventions
 			"include": [
 				"src/app/**/apple-icon.tsx",
 				"src/app/**/default.tsx",
@@ -42,15 +38,11 @@
 			"linter": {
 				"rules": {
 					"style": {
-						//
-						// Allow default exports of pages and layouts required by Next.js.
-						"noDefaultExport": "off",
-						//
-						// Allow the kebab-case naming convention required by Next.js.
+						"noDefaultExport": "off", // Allow default exports of pages and layouts required by Next.js.
 						"useFilenamingConvention": {
 							"level": "error",
 							"options": {
-								"filenameCases": ["kebab-case"]
+								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
 							}
 						}
 					}
@@ -70,12 +62,10 @@
 			"linter": {
 				"rules": {
 					"style": {
-						//
-						// Allow the kebab-case naming convention required by Next.js.
 						"useFilenamingConvention": {
 							"level": "error",
 							"options": {
-								"filenameCases": ["kebab-case"]
+								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
 							}
 						}
 					}
