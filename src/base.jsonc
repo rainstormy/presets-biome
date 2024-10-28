@@ -13,51 +13,35 @@
 	},
 	"javascript": {
 		"formatter": {
-			//
-			// Prefer to take advantage of Automatic Semicolon Insertion (ASI), which is always present in JavaScript.
-			"semicolons": "asNeeded"
+			"semicolons": "asNeeded" // Utilise Automatic Semicolon Insertion (ASI) which is always present in JavaScript.
 		}
 	},
 	"linter": {
 		"rules": {
 			"all": true,
 			"correctness": {
-				//
-				// Wait for this rule to support path aliases in tsconfig.json before enabling it.
-				"noUndeclaredDependencies": "off"
+				"noUndeclaredDependencies": "off" // Await support for path aliases from `tsconfig.json`.
 			},
 			"style": {
-				//
-				// Prefer HTML-like boolean props in JSX.
-				"noImplicitBoolean": "off",
-				//
-				// Prefer `Array<T>` to remain consistent with the built-in types for `Set<T>` and `Map<K, V>`.
+				"noImplicitBoolean": "off", // Prefer HTML-like boolean props in JSX.
 				"useConsistentArrayType": {
 					"level": "error",
-					"options": { "syntax": "generic" }
+					"options": { "syntax": "generic" } // Prefer `Array<T>` to remain consistent with the built-in types for `Set<T>` and `Map<K, V>`.
 				},
-				//
-				// Prefer to take advantage of union exhaustiveness checking in TypeScript.
-				"useDefaultSwitchClause": "off",
-				//
-				// Prefer PascalCase as the only naming convention to keep filenames simple and consistent.
+				"useDefaultSwitchClause": "off", // Utilise union exhaustiveness checking in TypeScript.
 				"useFilenamingConvention": {
 					"level": "error",
 					"options": {
-						"filenameCases": ["PascalCase"]
+						"filenameCases": ["PascalCase"] // Prefer PascalCase as the only naming convention to keep filenames simple and consistent.
 					}
 				},
-				//
-				// Relax the naming conventions.
 				"useNamingConvention": {
 					"level": "error",
 					"options": {
 						"conventions": [
-							//
-							// Ignore object literals for third-party compatibility reasons.
 							{
 								"selector": {
-									"kind": "objectLiteralMember",
+									"kind": "objectLiteralMember", // Ignore object literals for third-party compatibility reasons.
 									"scope": "any"
 								},
 								"match": ".*"
@@ -65,85 +49,62 @@
 						]
 					}
 				},
-				//
-				// `lint/style/useConsistentArrayType` supersedes this rule.
-				"useShorthandArrayType": "off"
+				"useShorthandArrayType": "off" // Superseded by `lint/style/useConsistentArrayType`.
 			},
 			"suspicious": {
-				//
-				// Allow async modifiers on any function for maintainability and consistency.
-				// TypeScript is able to detect incorrect use of the resulting promises.
-				"useAwait": "off"
+				"useAwait": "off" // Allow async modifiers on any function for consistency and to improve maintainability. TypeScript is able to detect incorrect use of the resulting promises.
 			},
 			"nursery": {
 				"all": true,
-				//
-				// Wait for this rule to support more scenarios in Tailwind CSS before enabling it.
-				"useSortedClasses": "off"
+				"useSortedClasses": "off" // Await support for screens and customised `tailwind.config.js`.
 			}
 		}
 	},
 	"overrides": [
-		//
-		// Provide support for ambient TypeScript modules (i.e. type declaration files).
 		{
+			// Provide support for ambient TypeScript modules (i.e. type declaration files).
 			"include": ["src/**/*.d.ts"],
 			"linter": {
 				"rules": {
 					"style": {
-						//
-						// Relax the naming conventions.
 						"useNamingConvention": {
 							"level": "error",
 							"options": {
 								"conventions": [
-									//
-									// Ignore properties for third-party compatibility reasons.
 									{
 										"selector": {
-											"kind": "typeProperty",
+											"kind": "typeProperty", // Ignore properties for third-party compatibility reasons.
 											"scope": "any"
 										},
 										"match": ".*"
 									}
 								],
-								//
-								// Allow consecutive uppercase letters for third-party compatibility reasons.
-								"strictCase": false
+								"strictCase": false // Allow consecutive uppercase letters for third-party compatibility reasons.
 							}
 						}
 					}
 				}
 			}
 		},
-		//
-		// Provide support for configuration files in a Node.js- and ESM-based toolchain.
 		{
+			// Provide support for configuration files in a Node.js- and ESM-based toolchain.
 			"include": ["*.config.js", "*.config.ts"],
 			"linter": {
 				"rules": {
 					"correctness": {
-						//
-						// Allow importing Node.js-specific modules such as `node:path` and `node:url` in configuration files.
-						"noNodejsModules": "off"
+						"noNodejsModules": "off" // Allow importing Node.js-specific modules such as `node:path` and `node:url` in configuration files.
 					},
 					"style": {
-						//
-						// Allow default exports in configuration files.
-						"noDefaultExport": "off",
-						//
-						// Allow the kebab-case naming convention motivated by the `.config.{js,ts}` extension.
+						"noDefaultExport": "off", // Allow default exports in configuration files.
 						"useFilenamingConvention": {
 							"level": "error",
 							"options": {
-								"filenameCases": ["kebab-case"]
+								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention motivated by the `.config.{js,ts}` extension.
 							}
 						}
 					},
 					"nursery": {
-						//
-						// Allow relative import statements in configuration files.
-						"useImportRestrictions": "off"
+						"useImportRestrictions": "off" // Allow relative import statements in configuration files.
 					}
 				}
 			}

@@ -4,52 +4,39 @@
 		"ignore": ["storybook-static/"]
 	},
 	"overrides": [
-		//
-		// Provide support for CSF3-based stories in Storybook.
-		// https://storybook.js.org/docs/api/csf
 		{
+			// Provide support for CSF3-based stories in Storybook.
+			// https://storybook.js.org/docs/api/csf
 			"include": ["src/**/*.stories.ts", "src/**/*.stories.tsx"],
 			"linter": {
 				"rules": {
 					"complexity": {
-						//
-						// Limit conditional logic in stories.
 						"noExcessiveCognitiveComplexity": {
 							"level": "error",
 							"options": {
-								"maxAllowedComplexity": 2
+								"maxAllowedComplexity": 2 // Limit conditional logic in stories.
 							}
 						}
 					},
 					"performance": {
-						//
-						// Allow inline regex selectors in Testing Library queries in story interaction tests.
-						"useTopLevelRegex": "off"
+						"useTopLevelRegex": "off" // Allow inline regex selectors in Testing Library queries in story interaction tests.
 					},
 					"style": {
-						//
-						// Allow default exports of static metadata required by Storybook.
-						"noDefaultExport": "off",
-						//
-						// Relax the naming conventions.
+						"noDefaultExport": "off", // Allow default exports of static metadata required by Storybook.
 						"useNamingConvention": {
 							"level": "error",
 							"options": {
 								"conventions": [
-									//
-									// Inherited from `base.jsonc`.
 									{
 										"selector": {
-											"kind": "objectLiteralMember",
+											"kind": "objectLiteralMember", // Inherited from `base.jsonc`.
 											"scope": "any"
 										},
 										"match": ".*"
 									},
-									//
-									// Ignore top-level constants, as they declare stories.
 									{
 										"selector": {
-											"kind": "const",
+											"kind": "const", // Ignore top-level constants, as they declare stories.
 											"scope": "global"
 										},
 										"match": ".*"
@@ -61,10 +48,9 @@
 				}
 			}
 		},
-		//
-		// Provide support for Storybook configuration files.
-		// https://storybook.js.org/docs/configure
 		{
+			// Provide support for Storybook configuration files.
+			// https://storybook.js.org/docs/configure
 			"include": [
 				".storybook/main.ts",
 				".storybook/main.tsx",
@@ -76,27 +62,19 @@
 			"linter": {
 				"rules": {
 					"correctness": {
-						//
-						// Allow importing Node.js-specific modules such as `node:path` and `node:url` in Storybook configuration files.
-						"noNodejsModules": "off"
+						"noNodejsModules": "off" // Allow importing Node.js-specific modules such as `node:path` and `node:url` in Storybook configuration files.
 					},
 					"style": {
-						//
-						// Allow default exports of configuration objects required by Storybook.
-						"noDefaultExport": "off",
-						//
-						// Allow the kebab-case naming convention required by Storybook.
+						"noDefaultExport": "off", // Allow default exports of configuration objects required by Storybook.
 						"useFilenamingConvention": {
 							"level": "error",
 							"options": {
-								"filenameCases": ["kebab-case"]
+								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Storybook.
 							}
 						}
 					},
 					"nursery": {
-						//
-						// Allow relative import statements in Storybook configuration files.
-						"useImportRestrictions": "off"
+						"useImportRestrictions": "off" // Allow relative import statements in Storybook configuration files.
 					}
 				}
 			}
