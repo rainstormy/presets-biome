@@ -45,6 +45,22 @@
 								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
 							}
 						}
+					},
+					"nursery": {
+						"useComponentExportOnlyModules": {
+							"level": "warn",
+							"options": {
+								"allowExportNames": [
+									"generateImageMetadata",
+									"generateMetadata",
+									"generateStaticParams",
+									"generateViewport",
+									"metadata",
+									"runtime",
+									"viewport"
+								]
+							}
+						}
 					}
 				}
 			}

@@ -44,6 +44,9 @@
 								]
 							}
 						}
+					},
+					"nursery": {
+						"useComponentExportOnlyModules": "off" // Allow exports of stories and static metadata required by Storybook.
 					}
 				}
 			}
