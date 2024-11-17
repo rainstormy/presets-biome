@@ -15,6 +15,7 @@
 	"exports": {
 		"./base": "./dist/base.json",
 		"./nextjs": "./dist/nextjs.json",
+		"./remix": "./dist/remix.json",
 		"./storybook": "./dist/storybook.json",
 		"./vitest": "./dist/vitest.json"
 	},

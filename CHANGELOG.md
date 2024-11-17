@@ -9,6 +9,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - [MIT license](https://choosealicense.com/licenses/mit).
 - New preset: `@rainstormy/presets-biome/base`.
 - New preset: `@rainstormy/presets-biome/nextjs`.
+- New preset: `@rainstormy/presets-biome/remix`.
 - New preset: `@rainstormy/presets-biome/storybook`.
 - New preset: `@rainstormy/presets-biome/vitest`.
 

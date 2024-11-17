@@ -66,6 +66,7 @@ refine the Biome settings for your project:
 | Configuration                         | Description                                                                   |
 |---------------------------------------|-------------------------------------------------------------------------------|
 | `@rainstormy/presets-biome/nextjs`    | Adds support for app router-based [Next.js](https://nextjs.org) apps.         |
+| `@rainstormy/presets-biome/remix`     | Adds support for flat router-based [Remix](https://remix.run) apps.           |
 | `@rainstormy/presets-biome/storybook` | Adds support for CSF3-based stories in [Storybook](https://storybook.js.org). |
 | `@rainstormy/presets-biome/vitest`    | Adds support for unit test suites in [Vitest](https://vitest.dev).            |
 
