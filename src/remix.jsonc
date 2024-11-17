@@ -1,0 +1,57 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"files": {
+		"ignore": ["build/"]
+	},
+	"overrides": [
+		{
+			// Provide support for React components.
+			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
+					}
+				}
+			}
+		},
+		{
+			// Provide support for the Remix flat router.
+			// https://remix.run/docs/en/main/file-conventions/routes
+			// https://remix.run/docs/en/main/file-conventions/root
+			"include": [
+				"src/app/routes/**.tsx",
+				"src/app/root.tsx"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off", // Allow default exports of routes required by Remix.
+						"useFilenamingConvention": "off" // Allow all route names.
+					},
+					"nursery": {
+						"useComponentExportOnlyModules": {
+							"level": "warn",
+							"options": {
+								"allowExportNames": [
+									"action",
+									"clientAction",
+									"clientLoader",
+									"default",
+									"ErrorBoundary",
+									"handle",
+									"headers",
+									"HydrateFallback",
+									"links",
+									"loader",
+									"meta",
+									"shouldRevalidate"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	]
+}
