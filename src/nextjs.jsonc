@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			// Provide support for the Next.js app router.
+			// Provide support for the app router.
 			// https://nextjs.org/docs/app/api-reference/file-conventions
 			"include": [
 				"src/app/**/apple-icon.tsx",
@@ -85,6 +85,38 @@
 							"level": "error",
 							"options": {
 								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			// Provide support for route handlers.
+			// https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+			"include": ["src/app/**/route.ts"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useNamingConvention": {
+							"level": "warn",
+							"options": {
+								"conventions": [
+									{
+										"selector": {
+											"kind": "objectLiteralMember", // Inherited from `base.jsonc`.
+											"scope": "any"
+										},
+										"match": ".*"
+									},
+									{
+										"selector": {
+											"kind": "function", // Ignore top-level functions.
+											"scope": "global"
+										},
+										"match": ".*"
+									}
+								]
 							}
 						}
 					}
