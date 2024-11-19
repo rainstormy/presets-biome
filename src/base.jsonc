@@ -20,7 +20,8 @@
 		"rules": {
 			"all": true,
 			"correctness": {
-				"noUndeclaredDependencies": "off" // Await support for path aliases from `tsconfig.json`.
+				"noUndeclaredDependencies": "off", // Await support for path aliases from `tsconfig.json`.
+				"useExhaustiveDependencies": "off" // Not applicable outside React apps.
 			},
 			"style": {
 				"noImplicitBoolean": "off", // Prefer HTML-like boolean props in JSX.
