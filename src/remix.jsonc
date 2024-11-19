@@ -9,6 +9,9 @@
 			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
 			"linter": {
 				"rules": {
+					"correctness": {
+						"useExhaustiveDependencies": "warn"
+					},
 					"suspicious": {
 						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
 					}
