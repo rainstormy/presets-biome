@@ -43,7 +43,7 @@
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of pages and layouts required by Next.js.
 						"useFilenamingConvention": {
-							"level": "error",
+							"level": "warn",
 							"options": {
 								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
 							}
@@ -82,7 +82,7 @@
 				"rules": {
 					"style": {
 						"useFilenamingConvention": {
-							"level": "error",
+							"level": "warn",
 							"options": {
 								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
 							}

@@ -15,7 +15,7 @@
 				"rules": {
 					"complexity": {
 						"noExcessiveCognitiveComplexity": {
-							"level": "error",
+							"level": "warn",
 							"options": {
 								"maxAllowedComplexity": 2 // Limit conditional logic in unit tests.
 							}
