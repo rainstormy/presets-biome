@@ -12,7 +12,7 @@
 				"rules": {
 					"complexity": {
 						"noExcessiveCognitiveComplexity": {
-							"level": "error",
+							"level": "warn",
 							"options": {
 								"maxAllowedComplexity": 2 // Limit conditional logic in stories.
 							}
@@ -24,7 +24,7 @@
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of static metadata required by Storybook.
 						"useNamingConvention": {
-							"level": "error",
+							"level": "warn",
 							"options": {
 								"conventions": [
 									{
@@ -70,7 +70,7 @@
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of configuration objects required by Storybook.
 						"useFilenamingConvention": {
-							"level": "error",
+							"level": "warn",
 							"options": {
 								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Storybook.
 							}

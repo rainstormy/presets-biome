@@ -99,7 +99,7 @@ For example:
                 "rules": {
                     "correctness": {
                         "useExhaustiveDependencies": {
-                            "level": "error",
+                            "level": "warn",
                             "options": {
                                 "hooks": [
                                     {
