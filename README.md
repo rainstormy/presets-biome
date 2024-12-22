@@ -9,31 +9,34 @@ property in `biome.json`.
 The preset configurations apply the default formatting and linting rules in
 Biome with a few twists:
 
-* **Locate source code in the `src` directory** to enable file globbing tools
-  to discover source code easily and to give all projects a consistent
-  structure.
-* **Omit semicolons** and rely fully
+- **Locate source code in the `src` directory** to enable file globbing tools to
+  discover source code easily and to give all projects a consistent structure.
+- **Omit semicolons** and rely fully
   on [automatic semicolon insertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion)
-  to reduce visual noise in the code. Using semicolons does not
-  disable the behaviour of automatic semicolon insertion anyway.
-* **Use the generic `Array<T>` type** instead of the shorthand `T[]` syntax to
+  to reduce visual noise in the code. Using semicolons does not disable the
+  behaviour of automatic semicolon insertion anyway.
+- **Use the generic `Array<T>` type** instead of the shorthand `T[]` syntax to
   make arrays of union types cleaner and to remain consistent with other
   built-in types such as `Set<T>`, `Map<K, V>`, and `Promise<T>`.
-* **Use PascalCase for filenames** in general to make the filenames consistent
+- **Use PascalCase for filenames** in general to make the filenames consistent
   with type declaration names and component names and to reduce the cognitive
   load of having to consider multiple file naming conventions.
 
 To adjust the linting rules to the appropriate context, please adhere to the
 following additional file naming conventions:
 
-* `*.config.(js|ts)` for configuration files in a Node.js- and ESM-based
+- `*.config.(js|ts)` for configuration files in a Node.js- and ESM-based
   toolchain.
-* `*.stories.(ts|tsx)` for CSF3-based stories
+- `*.stories.(ts|tsx)` for CSF3-based stories
   in [Storybook](https://storybook.js.org).
-* `*.tests.(ts|tsx)` for unit test suites in [Vitest](https://vitest.dev).
-* `*.testdata.(ts|tsx)` for arbitrary test data imported by unit test files.
-* `*.mock.(ts|tsx)` for [module mocks](https://vitest.dev/guide/mocking#modules)
+- `*.decorators.(ts|tsx)`
+  for [decorators](https://storybook.js.org/docs/writing-stories/decorators)
+  in Storybook.
+- `*.tests.(ts|tsx)` for test suites in [Vitest](https://vitest.dev).
+- `*.mocks.(ts|tsx)` for [module mocks](https://vitest.dev/guide/mocking#modules)
   in Vitest.
+- `*.fixtures.(ts|tsx)` for predefined test data and samples imported by test
+  suites and stories.
 
 > [!NOTE]  
 > Biome uses **tabs** for indentation to gain accessibility by making the
@@ -77,43 +80,43 @@ For example:
 
 ```json
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-    "extends": [
-        "@rainstormy/presets-biome/base",
-        "@rainstormy/presets-biome/nextjs",
-        "@rainstormy/presets-biome/storybook",
-        "@rainstormy/presets-biome/vitest"
-    ],
-    "files": {
-        "ignore": ["public/", "terraform/"]
-    },
-    "javascript": {
-        "formatter": {
-            "semicolons": "always"
-        }
-    },
-    "overrides": [
-        {
-            "include": ["src/app/**/*.tsx"],
-            "linter": {
-                "rules": {
-                    "correctness": {
-                        "useExhaustiveDependencies": {
-                            "level": "warn",
-                            "options": {
-                                "hooks": [
-                                    {
-                                        "name": "useWindowEvent",
-                                        "stableResult": true
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                }
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "extends": [
+    "@rainstormy/presets-biome/base",
+    "@rainstormy/presets-biome/nextjs",
+    "@rainstormy/presets-biome/storybook",
+    "@rainstormy/presets-biome/vitest"
+  ],
+  "files": {
+    "ignore": ["public/", "terraform/"]
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "always"
+    }
+  },
+  "overrides": [
+    {
+      "include": ["src/app/**/*.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useExhaustiveDependencies": {
+              "level": "warn",
+              "options": {
+                "hooks": [
+                  {
+                    "name": "useWindowEvent",
+                    "stableResult": true
+                  }
+                ]
+              }
             }
+          }
         }
-    ]
+      }
+    }
+  ]
 }
 ```
 
