@@ -19,17 +19,14 @@
 			}
 		},
 		{
-			// Provide support for the Remix flat router.
-			// https://remix.run/docs/en/main/file-conventions/routes
-			// https://remix.run/docs/en/main/file-conventions/root
-			"include": [
-				"src/app/routes/**.tsx",
-				"src/app/root.tsx"
-			],
+			// Provide support for file routes.
+			// https://reactrouter.com/how-to/file-route-conventions
+			// https://reactrouter.com/start/framework/route-module
+			"include": ["src/app/routes/**.tsx", "src/app/root.tsx"],
 			"linter": {
 				"rules": {
 					"style": {
-						"noDefaultExport": "off", // Allow default exports of routes required by Remix.
+						"noDefaultExport": "off", // Allow default exports of routes required by React Router.
 						"useFilenamingConvention": "off" // Allow all route names.
 					},
 					"nursery": {
@@ -52,6 +49,19 @@
 								]
 							}
 						}
+					}
+				}
+			}
+		},
+		{
+			// Provide support for the route configuration.
+			// https://reactrouter.com/how-to/file-route-conventions
+			"include": ["src/app/routes.ts"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off", // Allow default exports of the route configuration required by React Router.
+						"useFilenamingConvention": "off"
 					}
 				}
 			}
