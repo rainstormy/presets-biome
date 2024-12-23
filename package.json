@@ -19,7 +19,7 @@
 		"./vitest": "./dist/vitest.json"
 	},
 	"files": ["dist/"],
-	"packageManager": "pnpm@9.5.0+sha256.dbdf5961c32909fb030595a9daa1dae720162e658609a8f92f2fa99835510ca5",
+	"packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf",
 	"engines": {
 		"node": ">=20.0.0"
 	},
