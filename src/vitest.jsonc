@@ -1,33 +1,28 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 	"overrides": [
-		//
-		// Provide support for unit test suites in Vitest.
 		{
+			// Provide support for unit test suites in Vitest.
 			"include": [
-				"src/**/*.mock.ts",
-				"src/**/*.mock.tsx",
-				"src/**/*.testdata.ts",
-				"src/**/*.testdata.tsx",
+				"src/**/*.fixtures.ts",
+				"src/**/*.fixtures.tsx",
+				"src/**/*.mocks.ts",
+				"src/**/*.mocks.tsx",
 				"src/**/*.tests.ts",
 				"src/**/*.tests.tsx"
 			],
 			"linter": {
 				"rules": {
 					"complexity": {
-						//
-						// Limit conditional logic in unit tests.
 						"noExcessiveCognitiveComplexity": {
-							"level": "error",
+							"level": "warn",
 							"options": {
-								"maxAllowedComplexity": 2
+								"maxAllowedComplexity": 2 // Limit conditional logic in unit tests.
 							}
 						}
 					},
 					"performance": {
-						//
-						// Allow inline regex selectors in Testing Library queries in unit tests.
-						"useTopLevelRegex": "off"
+						"useTopLevelRegex": "off" // Allow inline regex selectors in Testing Library queries in unit tests.
 					}
 				}
 			}

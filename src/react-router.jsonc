@@ -1,0 +1,70 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"files": {
+		"ignore": ["build/"]
+	},
+	"overrides": [
+		{
+			// Provide support for React components.
+			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"useExhaustiveDependencies": "warn"
+					},
+					"suspicious": {
+						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
+					}
+				}
+			}
+		},
+		{
+			// Provide support for file routes.
+			// https://reactrouter.com/how-to/file-route-conventions
+			// https://reactrouter.com/start/framework/route-module
+			"include": ["src/app/routes/**.tsx", "src/app/root.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off", // Allow default exports of routes required by React Router.
+						"useFilenamingConvention": "off" // Allow all route names.
+					},
+					"nursery": {
+						"useComponentExportOnlyModules": {
+							"level": "warn",
+							"options": {
+								"allowExportNames": [
+									"action",
+									"clientAction",
+									"clientLoader",
+									"default",
+									"ErrorBoundary",
+									"handle",
+									"headers",
+									"HydrateFallback",
+									"links",
+									"loader",
+									"meta",
+									"shouldRevalidate"
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			// Provide support for the route configuration.
+			// https://reactrouter.com/how-to/file-route-conventions
+			"include": ["src/app/routes.ts"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off", // Allow default exports of the route configuration required by React Router.
+						"useFilenamingConvention": "off"
+					}
+				}
+			}
+		}
+	]
+}
