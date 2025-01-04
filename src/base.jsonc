@@ -240,7 +240,7 @@
 				"noConfusingLabels": "warn",
 				"noConfusingVoidType": "warn",
 				"noConsole": "warn",
-				"noConsoleLog": "warn",
+				"noConsoleLog": "off", // Deprecated.
 				"noConstEnum": "warn",
 				"noControlCharactersInRegex": "warn",
 				"noDebugger": "warn",
@@ -316,7 +316,7 @@
 				"noImgElement": "warn",
 				"noIrregularWhitespace": "warn",
 				"noMissingVarFunction": "warn",
-				"noNestedTernary": "warn",
+				"noNestedTernary": "off", // Superseded by `lint/complexity/noExcessiveCognitiveComplexity`.
 				"noOctalEscape": "warn",
 				"noProcessEnv": "warn",
 				"noRestrictedImports": "warn",
