@@ -313,7 +313,7 @@
 				"noExportedImports": "warn",
 				"noHeadElement": "warn",
 				"noHeadImportInDocument": "warn",
-				"noImgElement": "warn",
+				"noImgElement": "off", // Not applicable outside Next.js apps.
 				"noIrregularWhitespace": "warn",
 				"noMissingVarFunction": "warn",
 				"noNestedTernary": "off", // Superseded by `lint/complexity/noExcessiveCognitiveComplexity`.
