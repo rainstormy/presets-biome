@@ -37,7 +37,7 @@
 		"@biomejs/biome": "Biome is an opinionated linter and code formatter."
 	},
 	"peerDependencies": {
-		"@biomejs/biome": ">=1.9.0 <2.0.0"
+		"@biomejs/biome": ">=1.9.0 <1.10.0"
 	},
 	"// peerDependencies": {
 		"@biomejs/biome": "The preset is made for Biome. When declared as a peer dependency, the package manager will remind the user to install it. The limited version range ensures compatibility with the nursery rules in Biome."

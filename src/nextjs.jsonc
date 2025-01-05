@@ -14,6 +14,9 @@
 					},
 					"suspicious": {
 						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
+					},
+					"nursery": {
+						"noImgElement": "warn"
 					}
 				}
 			}
@@ -53,6 +56,8 @@
 						"useComponentExportOnlyModules": {
 							"level": "warn",
 							"options": {
+								// Allow exports of Next.js-specific functions next to the React component.
+								// https://nextjs.org/docs/app/api-reference/functions
 								"allowExportNames": [
 									"generateImageMetadata",
 									"generateMetadata",

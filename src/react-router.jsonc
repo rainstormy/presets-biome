@@ -21,7 +21,6 @@
 		{
 			// Provide support for file routes.
 			// https://reactrouter.com/how-to/file-route-conventions
-			// https://reactrouter.com/start/framework/route-module
 			"include": ["src/app/routes/**.tsx", "src/app/root.tsx"],
 			"linter": {
 				"rules": {
@@ -33,6 +32,8 @@
 						"useComponentExportOnlyModules": {
 							"level": "warn",
 							"options": {
+								// Allow exports of React Router-specific functions next to the React component.
+								// https://reactrouter.com/start/framework/route-module
 								"allowExportNames": [
 									"action",
 									"clientAction",
@@ -61,7 +62,7 @@
 				"rules": {
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of the route configuration required by React Router.
-						"useFilenamingConvention": "off"
+						"useFilenamingConvention": "off" // Allow the filename `routes.ts` required by React Router.
 					}
 				}
 			}
