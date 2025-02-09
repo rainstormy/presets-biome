@@ -3,7 +3,13 @@
 	"name": "@rainstormy/presets-biome",
 	"version": "1.0.0",
 	"description": "Predefined, opinionated Biome configurations suitable for any web project.",
-	"keywords": ["biome", "formatter", "formatting", "linter", "linting"],
+	"keywords": [
+		"biome",
+		"formatter",
+		"formatting",
+		"linter",
+		"linting"
+	],
 	"bugs": "https://github.com/rainstormy/presets-biome/issues",
 	"repository": {
 		"type": "git",
@@ -19,8 +25,10 @@
 		"./storybook": "./dist/storybook.json",
 		"./vitest": "./dist/vitest.json"
 	},
-	"files": ["dist/"],
-	"packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf",
+	"files": [
+		"dist/"
+	],
+	"packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92",
 	"engines": {
 		"node": ">=20.0.0"
 	},
