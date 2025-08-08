@@ -15,14 +15,21 @@ description = "Generates production-grade build artefacts."
 alias = ["b"]
 
 [tasks.check]
-depends = ["check_fmt"]
-description = "Runs `check_fmt`."
+depends = ["check_fmt", "check_gha"]
+description = "Runs `check_fmt` and `check_gha`."
 alias = ["c"]
 
 [tasks.check_fmt]
 # language=sh
 run = "biome check --error-on-warnings"
 description = "Verifies the code style of the source code with Biome."
+alias = ["cf"]
+
+[tasks.check_gha]
+# language=sh
+run = "actionlint"
+description = "Verifies the syntax of the GitHub Actions workflows with actionlint."
+alias = ["cg", "gha"]
 
 [tasks.fmt]
 # language=sh

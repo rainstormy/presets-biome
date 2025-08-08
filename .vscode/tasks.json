@@ -35,6 +35,17 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "check_gha",
+			"command": "mise run check_gha",
+			"type": "shell",
+			"presentation": {
+				"clear": true,
+				"panel": "shared",
+				"reveal": "always"
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "fmt",
 			"command": "mise run fmt",
 			"type": "shell",
