@@ -1,30 +1,30 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"files": {
-		"ignore": [".next/"]
-	},
+	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// Provide support for React components.
-			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			// React components and hooks.
+			"includes": ["src/**/*.ts", "src/**/*.tsx"],
 			"linter": {
 				"rules": {
 					"correctness": {
 						"useExhaustiveDependencies": "warn"
 					},
+					"performance": {
+						"noImgElement": "off" // Allow self-hosting and custom image optimisation to improve flexibility.
+					},
 					"suspicious": {
 						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
 					},
 					"nursery": {
-						"noImgElement": "warn"
+						"noNextAsyncClientComponent": "warn"
 					}
 				}
 			}
 		},
 		{
-			// Provide support for the app router.
+			// App router.
 			// https://nextjs.org/docs/app/api-reference/file-conventions
-			"include": [
+			"includes": [
 				"src/app/**/apple-icon.tsx",
 				"src/app/**/default.tsx",
 				"src/app/**/error.tsx",
@@ -45,14 +45,6 @@
 				"rules": {
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of pages and layouts required by Next.js.
-						"useFilenamingConvention": {
-							"level": "warn",
-							"options": {
-								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
-							}
-						}
-					},
-					"nursery": {
 						"useComponentExportOnlyModules": {
 							"level": "warn",
 							"options": {
@@ -68,13 +60,14 @@
 									"viewport"
 								]
 							}
-						}
+						},
+						"useFilenamingConvention": "off" // Allow the filenames required by Next.js.
 					}
 				}
 			}
 		},
 		{
-			"include": [
+			"includes": [
 				"src/app/**/route.ts",
 				"src/instrumentation.ts",
 				"src/instrumentation-edge.ts",
@@ -86,20 +79,15 @@
 			"linter": {
 				"rules": {
 					"style": {
-						"useFilenamingConvention": {
-							"level": "warn",
-							"options": {
-								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Next.js.
-							}
-						}
+						"useFilenamingConvention": "off" // Allow the filenames required by Next.js.
 					}
 				}
 			}
 		},
 		{
-			// Provide support for route handlers.
+			// Route handlers.
 			// https://nextjs.org/docs/app/building-your-application/routing/route-handlers
-			"include": ["src/app/**/route.ts"],
+			"includes": ["src/app/**/route.ts"],
 			"linter": {
 				"rules": {
 					"style": {
@@ -109,7 +97,7 @@
 								"conventions": [
 									{
 										"selector": {
-											"kind": "objectLiteralMember", // Inherited from `base.jsonc`.
+											"kind": "objectLiteralMember", // Inherited from `index.jsonc`.
 											"scope": "any"
 										},
 										"match": ".*"

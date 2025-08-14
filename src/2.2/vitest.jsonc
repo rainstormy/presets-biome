@@ -1,0 +1,56 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+	"overrides": [
+		{
+			// Unit test suites and mocks in Vitest.
+			"includes": [
+				"src/**/*.fixtures.ts",
+				"src/**/*.fixtures.tsx",
+				"src/**/*.mocks.ts",
+				"src/**/*.mocks.tsx",
+				"src/**/*.tests.ts",
+				"src/**/*.tests.tsx"
+			],
+			"assist": {
+				"actions": {
+					"source": {
+						"organizeImports": {
+							"level": "on",
+							"options": {
+								"groups": [
+									// Mock imports must come before regular imports so that Vitest can intercept and replace any later imports with mocks.
+									["**/*.mocks", "**/*.mocks.*"],
+									//
+									// Inherited from `index.jsonc`.
+									":URL:",
+									[":BUN:", ":NODE:", ":PACKAGE_WITH_PROTOCOL:"],
+									":PACKAGE:",
+									":ALIAS:",
+									":PATH:"
+								]
+							}
+						}
+					}
+				}
+			},
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "warn",
+							"options": {
+								"maxAllowedComplexity": 2 // Limit conditional logic in tests.
+							}
+						}
+					},
+					"performance": {
+						"useTopLevelRegex": "off" // Allow inline regex selectors in Testing Library queries.
+					},
+					"style": {
+						"useNumericSeparators": "off" // Prefer test data (e.g. ids and Unix epoch timestamps) without numeric separators to improve discoverability.
+					}
+				}
+			}
+		}
+	]
+}

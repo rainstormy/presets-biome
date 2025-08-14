@@ -1,8 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"files": {
-		"ignore": [".idea/", "node_modules/"]
-	},
+	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -11,10 +8,45 @@
 			"enabled": true
 		}
 	},
+	"grit": {
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"html": {
+		"formatter": {
+			"enabled": true
+		}
+	},
 	"javascript": {
 		"formatter": {
-			"semicolons": "asNeeded" // Utilise Automatic Semicolon Insertion (ASI) which is always present in JavaScript.
+			// Omit semicolons to reduce noise and improve readability.
+			// Rely fully on automatic semicolon insertion (ASI). Using semicolons does not disable the ASI behaviour anyway.
+			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion
+			// https://slides.com/evanyou/semicolons
+			"semicolons": "asNeeded"
 		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							":URL:",
+							[":BUN:", ":NODE:", ":PACKAGE_WITH_PROTOCOL:"],
+							":PACKAGE:",
+							":ALIAS:",
+							":PATH:"
+						]
+					}
+				}
+			}
+		}
+	},
+	"formatter": {
+		"useEditorconfig": true
 	},
 	"linter": {
 		"rules": {
@@ -23,21 +55,23 @@
 				"noAriaHiddenOnFocusable": "warn",
 				"noAriaUnsupportedElements": "warn",
 				"noAutofocus": "warn",
-				"noBlankTarget": "warn",
 				"noDistractingElements": "warn",
 				"noHeaderScope": "warn",
 				"noInteractiveElementToNoninteractiveRole": "warn",
 				"noLabelWithoutControl": "warn",
+				"noNoninteractiveElementInteractions": "warn",
 				"noNoninteractiveElementToInteractiveRole": "warn",
 				"noNoninteractiveTabindex": "warn",
 				"noPositiveTabindex": "warn",
 				"noRedundantAlt": "warn",
 				"noRedundantRoles": "warn",
+				"noStaticElementInteractions": "warn",
 				"noSvgWithoutTitle": "warn",
 				"useAltText": "warn",
 				"useAnchorContent": "warn",
 				"useAriaActivedescendantWithTabindex": "warn",
 				"useAriaPropsForRole": "warn",
+				"useAriaPropsSupportedByRole": "warn",
 				"useButtonType": "warn",
 				"useFocusableInteractive": "warn",
 				"useGenericFontNames": "warn",
@@ -52,41 +86,53 @@
 				"useValidAriaProps": "warn",
 				"useValidAriaRole": "warn",
 				"useValidAriaValues": "warn",
+				"useValidAutocomplete": "warn",
 				"useValidLang": "warn"
 			},
 			"complexity": {
+				"noAdjacentSpacesInRegex": "warn",
+				"noArguments": "warn",
 				"noBannedTypes": "warn",
+				"noCommaOperator": "warn",
 				"noEmptyTypeParameters": "warn",
 				"noExcessiveCognitiveComplexity": "warn",
+				"noExcessiveLinesPerFunction": "off", // Rely on `lint/complexity/noExcessiveCognitiveComplexity` instead.
 				"noExcessiveNestedTestSuites": "warn",
 				"noExtraBooleanCast": "warn",
+				"noFlatMapIdentity": "warn",
 				"noForEach": "warn",
-				"noMultipleSpacesInRegularExpressionLiterals": "warn",
+				"noImplicitCoercions": "warn",
+				"noImportantStyles": "warn",
 				"noStaticOnlyClass": "warn",
 				"noThisInStatic": "warn",
 				"noUselessCatch": "warn",
 				"noUselessConstructor": "warn",
+				"noUselessContinue": "warn",
 				"noUselessEmptyExport": "warn",
+				"noUselessEscapeInRegex": "warn",
 				"noUselessFragments": "warn",
 				"noUselessLabel": "warn",
 				"noUselessLoneBlockStatements": "warn",
 				"noUselessRename": "warn",
 				"noUselessStringConcat": "warn",
+				"noUselessStringRaw": "warn",
 				"noUselessSwitchCase": "warn",
 				"noUselessTernary": "warn",
 				"noUselessThisAlias": "warn",
 				"noUselessTypeConstraint": "warn",
 				"noUselessUndefinedInitialization": "warn",
 				"noVoid": "warn",
-				"noWith": "warn",
 				"useArrowFunction": "warn",
 				"useDateNow": "warn",
 				"useFlatMap": "warn",
+				"useIndexOf": "warn",
 				"useLiteralKeys": "warn",
+				"useNumericLiterals": "warn",
 				"useOptionalChain": "warn",
 				"useRegexLiterals": "warn",
 				"useSimpleNumberKeys": "warn",
-				"useSimplifiedLogicExpression": "warn"
+				"useSimplifiedLogicExpression": "warn",
+				"useWhile": "warn"
 			},
 			"correctness": {
 				"noChildrenProp": "warn",
@@ -96,107 +142,161 @@
 				"noConstructorReturn": "warn",
 				"noEmptyCharacterClassInRegex": "warn",
 				"noEmptyPattern": "warn",
-				"noFlatMapIdentity": "warn",
+				"noGlobalDirnameFilename": "warn",
 				"noGlobalObjectCalls": "warn",
 				"noInnerDeclarations": "warn",
 				"noInvalidBuiltinInstantiation": "warn",
 				"noInvalidConstructorSuper": "warn",
 				"noInvalidDirectionInLinearGradient": "warn",
 				"noInvalidGridAreas": "warn",
-				"noInvalidNewBuiltin": "warn",
 				"noInvalidPositionAtImportRule": "warn",
 				"noInvalidUseBeforeDeclaration": "warn",
-				"noNewSymbol": "warn",
+				"noMissingVarFunction": "warn",
+				"noNestedComponentDefinitions": "warn",
 				"noNodejsModules": "warn",
 				"noNonoctalDecimalEscape": "warn",
 				"noPrecisionLoss": "warn",
+				"noPrivateImports": "warn",
+				"noProcessGlobal": "warn",
+				"noReactPropAssignments": "warn",
 				"noRenderReturnValue": "warn",
+				"noRestrictedElements": "warn",
 				"noSelfAssign": "warn",
 				"noSetterReturn": "warn",
+				"noSolidDestructuredProps": "warn", // Prefer consistent use of props in JSX components, including React components.
 				"noStringCaseMismatch": "warn",
 				"noSwitchDeclarations": "warn",
-				"noUndeclaredDependencies": "off", // Await support for path aliases from `tsconfig.json`.
+				"noUndeclaredDependencies": {
+					"level": "warn",
+					"options": {
+						"devDependencies": false // Disallow importing development-only dependencies in production code.
+					}
+				},
 				"noUndeclaredVariables": "warn",
 				"noUnknownFunction": "warn",
 				"noUnknownMediaFeatureName": "warn",
 				"noUnknownProperty": "warn",
+				"noUnknownPseudoClass": "warn",
+				"noUnknownPseudoElement": "warn",
+				"noUnknownTypeSelector": "warn",
 				"noUnknownUnit": "warn",
 				"noUnmatchableAnbSelector": "warn",
-				"noUnnecessaryContinue": "warn",
 				"noUnreachable": "warn",
 				"noUnreachableSuper": "warn",
 				"noUnsafeFinally": "warn",
 				"noUnsafeOptionalChaining": "warn",
 				"noUnusedFunctionParameters": "warn",
-				"noUnusedImports": "warn",
+				"noUnusedImports": {
+					"level": "warn",
+					"fix": "safe", // Let Biome clean up unused imports automatically.
+					"options": {}
+				},
 				"noUnusedLabels": "warn",
 				"noUnusedPrivateClassMembers": "warn",
 				"noUnusedVariables": "warn",
 				"noVoidElementsWithChildren": "warn",
 				"noVoidTypeReturn": "warn",
-				"useArrayLiterals": "warn",
 				"useExhaustiveDependencies": "off", // Not applicable outside React apps.
+				"useGraphqlNamedOperations": "warn",
 				"useHookAtTopLevel": "warn",
 				"useImportExtensions": "warn",
 				"useIsNan": "warn",
+				"useJsonImportAttributes": "warn",
 				"useJsxKeyInIterable": "warn",
+				"useParseIntRadix": "warn",
+				"useSingleJsDocAsterisk": "warn",
+				"useUniqueElementIds": "off", // Allow hard-coded element ids to make it easier to integrate with third-party libraries that expect specific ids.
 				"useValidForDirection": "warn",
+				"useValidTypeof": "warn",
 				"useYield": "warn"
 			},
 			"performance": {
 				"noAccumulatingSpread": "warn",
+				"noAwaitInLoops": "warn",
 				"noBarrelFile": "warn",
 				"noDelete": "warn",
+				"noDynamicNamespaceImportAccess": "warn",
+				"noImgElement": "off", // Not applicable outside Next.js apps.
+				"noNamespaceImport": "warn",
 				"noReExportAll": "warn",
+				"noUnwantedPolyfillio": "warn",
+				"useGoogleFontPreconnect": "warn",
+				"useSolidForComponent": "off", // Not applicable outside Solid apps.
 				"useTopLevelRegex": "warn"
 			},
 			"security": {
+				"noBlankTarget": "warn",
 				"noDangerouslySetInnerHtml": "warn",
 				"noDangerouslySetInnerHtmlWithChildren": "warn",
 				"noGlobalEval": "warn"
 			},
 			"style": {
-				"noArguments": "warn",
-				"noCommaOperator": "warn",
+				"noCommonJs": "warn",
 				"noDefaultExport": "warn",
+				"noDescendingSpecificity": "warn",
 				"noDoneCallback": "warn",
+				"noEnum": "warn",
+				"noExportedImports": "warn",
+				"noHeadElement": "warn",
 				"noImplicitBoolean": "off", // Prefer HTML-like boolean props in JSX.
 				"noInferrableTypes": "warn",
+				"noMagicNumbers": "off", // Allow magic numbers. Having to declare and name constants for magic numbers results in larger cognitive overhead and may sometimes also hurt readability (even though the opposite was intended) when the names are too vague or too descriptive.
 				"noNamespace": "warn",
-				"noNamespaceImport": "warn",
 				"noNegationElse": "warn",
+				"noNestedTernary": "off", // Rely on `lint/complexity/noExcessiveCognitiveComplexity` instead.
 				"noNonNullAssertion": "warn",
 				"noParameterAssign": "warn",
 				"noParameterProperties": "warn",
+				"noProcessEnv": "warn",
 				"noRestrictedGlobals": "warn",
+				"noRestrictedImports": "warn",
+				"noRestrictedTypes": "warn",
 				"noShoutyConstants": "warn",
+				"noSubstr": "warn",
 				"noUnusedTemplateLiteral": "warn",
 				"noUselessElse": "warn",
-				"noVar": "warn",
+				"noValueAtRule": "warn",
 				"noYodaExpression": "warn",
+				"useArrayLiterals": "warn",
 				"useAsConstAssertion": "warn",
+				"useAtIndex": "warn",
 				"useBlockStatements": "warn",
 				"useCollapsedElseIf": "warn",
+				"useCollapsedIf": "warn",
+				"useComponentExportOnlyModules": "warn",
 				"useConsistentArrayType": {
 					"level": "warn",
+					"fix": "safe", // Let Biome correct the type automatically to reduce the workload when copy-pasting code (e.g. generated by AI) that uses a different style.
 					"options": { "syntax": "generic" } // Prefer `Array<T>` to remain consistent with the built-in types for `Set<T>` and `Map<K, V>`.
 				},
 				"useConsistentBuiltinInstantiation": "warn",
+				"useConsistentCurlyBraces": "warn",
+				"useConsistentMemberAccessibility": "warn",
+				"useConsistentObjectDefinitions": {
+					"level": "warn",
+					"options": {
+						"syntax": "shorthand" // Prefer the shorthand syntax to reduce noise and improve readability.
+					}
+				},
 				"useConst": "warn",
 				"useDefaultParameterLast": "warn",
-				"useDefaultSwitchClause": "off", // Utilise union exhaustiveness checking in TypeScript.
+				"useDefaultSwitchClause": "off", // Rely on exhaustiveness checks in TypeScript to reduce noise and improve readability.
+				"useDeprecatedReason": "warn",
 				"useEnumInitializers": "warn",
 				"useExplicitLengthCheck": "warn",
 				"useExponentiationOperator": "warn",
 				"useExportType": "warn",
+				"useExportsLast": "off", // Prefer a top-down declaration order like the Stepdown Rule (see 'Clean Code' by Robert C. Martin a.k.a. 'Uncle Bob').
 				"useFilenamingConvention": {
 					"level": "warn",
 					"options": {
-						"filenameCases": ["PascalCase"] // Prefer PascalCase as the only naming convention to keep filenames simple and consistent.
+						"filenameCases": ["PascalCase"] // Allow PascalCase as the only case to keep the naming convention simple and consistent.
 					}
 				},
 				"useForOf": "warn",
 				"useFragmentSyntax": "warn",
+				"useGraphqlNamingConvention": "warn",
+				"useGroupedAccessorPairs": "warn",
 				"useImportType": "warn",
 				"useLiteralEnumMembers": "warn",
 				"useNamingConvention": {
@@ -205,7 +305,7 @@
 						"conventions": [
 							{
 								"selector": {
-									"kind": "objectLiteralMember", // Ignore object literals for third-party compatibility reasons.
+									"kind": "objectLiteralMember", // Ignore object literals to make it easier to integrate with third-party libraries that use different naming conventions.
 									"scope": "any"
 								},
 								"match": ".*"
@@ -216,23 +316,28 @@
 				"useNodeAssertStrict": "warn",
 				"useNodejsImportProtocol": "warn",
 				"useNumberNamespace": "warn",
-				"useNumericLiterals": "warn",
+				"useNumericSeparators": "warn",
+				"useObjectSpread": "warn",
+				"useReadonlyClassProperties": "warn",
 				"useSelfClosingElements": "warn",
-				"useShorthandArrayType": "off", // Superseded by `lint/style/useConsistentArrayType`.
 				"useShorthandAssign": "warn",
 				"useShorthandFunctionType": "warn",
-				"useSingleCaseStatement": "warn",
 				"useSingleVarDeclarator": "warn",
+				"useSymbolDescription": "warn",
 				"useTemplate": "warn",
 				"useThrowNewError": "warn",
 				"useThrowOnlyError": "warn",
-				"useWhile": "warn"
+				"useTrimStartEnd": "warn",
+				"useUnifiedTypeSignatures": "warn"
 			},
 			"suspicious": {
+				"noAlert": "warn",
 				"noApproximativeNumericConstant": "warn",
 				"noArrayIndexKey": "warn",
 				"noAssignInExpressions": "warn",
 				"noAsyncPromiseExecutor": "warn",
+				"noBiomeFirstException": "warn",
+				"noBitwiseOperators": "warn",
 				"noCatchAssign": "warn",
 				"noClassAssign": "warn",
 				"noCommentText": "warn",
@@ -240,18 +345,24 @@
 				"noConfusingLabels": "warn",
 				"noConfusingVoidType": "warn",
 				"noConsole": "warn",
-				"noConsoleLog": "off", // Deprecated.
 				"noConstEnum": "warn",
+				"noConstantBinaryExpressions": "warn",
 				"noControlCharactersInRegex": "warn",
 				"noDebugger": "warn",
+				"noDocumentCookie": "warn",
+				"noDocumentImportInPage": "warn",
 				"noDoubleEquals": "warn",
 				"noDuplicateAtImportRules": "warn",
 				"noDuplicateCase": "warn",
 				"noDuplicateClassMembers": "warn",
+				"noDuplicateCustomProperties": "warn",
+				"noDuplicateElseIf": "warn",
+				"noDuplicateFields": "warn",
 				"noDuplicateFontNames": "warn",
 				"noDuplicateJsxProps": "warn",
 				"noDuplicateObjectKeys": "warn",
 				"noDuplicateParameters": "warn",
+				"noDuplicateProperties": "warn",
 				"noDuplicateSelectorsKeyframeBlock": "warn",
 				"noDuplicateTestHooks": "warn",
 				"noEmptyBlock": "warn",
@@ -267,15 +378,19 @@
 				"noGlobalAssign": "warn",
 				"noGlobalIsFinite": "warn",
 				"noGlobalIsNan": "warn",
+				"noHeadImportInDocument": "warn",
 				"noImplicitAnyLet": "warn",
 				"noImportAssign": "warn",
 				"noImportantInKeyframe": "warn",
+				"noIrregularWhitespace": "warn",
 				"noLabelVar": "warn",
 				"noMisleadingCharacterClass": "warn",
 				"noMisleadingInstantiator": "warn",
 				"noMisplacedAssertion": "warn",
 				"noMisrefactoredShorthandAssign": "warn",
+				"noOctalEscape": "warn",
 				"noPrototypeBuiltins": "warn",
+				"noQuickfixBiome": "warn",
 				"noReactSpecificProps": "warn",
 				"noRedeclare": "warn",
 				"noRedundantUseStrict": "warn",
@@ -285,75 +400,78 @@
 				"noSkippedTests": "warn",
 				"noSparseArray": "warn",
 				"noSuspiciousSemicolonInJsx": "warn",
+				"noTemplateCurlyInString": "warn",
 				"noThenProperty": "warn",
+				"noTsIgnore": "warn",
+				"noUnassignedVariables": "warn",
+				"noUnknownAtRules": "warn",
 				"noUnsafeDeclarationMerging": "warn",
 				"noUnsafeNegation": "warn",
-				"useAwait": "off", // Allow async modifiers on any function for consistency and to improve maintainability. TypeScript is able to detect incorrect use of the resulting promises.
+				"noUselessEscapeInString": "warn",
+				"noUselessRegexBackrefs": "warn",
+				"noVar": "warn",
+				"noWith": "warn",
+				"useAdjacentOverloadSignatures": "warn",
+				"useAwait": "off", // Rely on `Promise<T>` type checks in TypeScript and allow async modifiers on any function to improve maintainability.
+				"useBiomeIgnoreFolder": "warn",
 				"useDefaultSwitchClauseLast": "warn",
 				"useErrorMessage": "warn",
 				"useGetterReturn": "warn",
-				"useIsArray": "warn",
-				"useNamespaceKeyword": "warn",
-				"useNumberToFixedDigitsArgument": "warn",
-				"useValidTypeof": "warn"
-			},
-			// Opt in to nursery rules one by one to avoid unintentional breaking changes
-			// from new nursery rules introduced in future releases of Biome.
-			"nursery": {
-				"noCommonJs": "warn",
-				"noDescendingSpecificity": "warn",
-				"noDocumentCookie": "warn",
-				"noDocumentImportInPage": "warn",
-				"noDuplicateCustomProperties": "warn",
-				"noDuplicatedFields": "warn",
-				"noDuplicateElseIf": "warn",
-				"noDuplicateProperties": "warn",
-				"noDynamicNamespaceImportAccess": "warn",
-				"noEnum": "warn",
-				"noExportedImports": "warn",
-				"noHeadElement": "warn",
-				"noHeadImportInDocument": "warn",
-				"noImgElement": "off", // Not applicable outside Next.js apps.
-				"noIrregularWhitespace": "warn",
-				"noMissingVarFunction": "warn",
-				"noNestedTernary": "off", // Superseded by `lint/complexity/noExcessiveCognitiveComplexity`.
-				"noOctalEscape": "warn",
-				"noProcessEnv": "warn",
-				"noRestrictedImports": "warn",
-				"noRestrictedTypes": "warn",
-				"noSecrets": "off", // Await mitigation of false positives.
-				"noStaticElementInteractions": "warn",
-				"noSubstr": "warn",
-				"noTemplateCurlyInString": "warn",
-				"noUnknownPseudoClass": "warn",
-				"noUnknownPseudoElement": "warn",
-				"noUnknownTypeSelector": "warn",
-				"noUselessEscapeInRegex": "warn",
-				"noUselessStringRaw": "warn",
-				"noValueAtRule": "warn",
-				"useAdjacentOverloadSignatures": "warn",
-				"useAriaPropsSupportedByRole": "warn",
-				"useAtIndex": "warn",
-				"useCollapsedIf": "warn",
-				"useComponentExportOnlyModules": "warn",
-				"useConsistentCurlyBraces": "off", // Await support for single trailing spaces in curly braces.
-				"useConsistentMemberAccessibility": "warn",
-				"useDeprecatedReason": "warn",
-				"useExplicitType": "warn",
 				"useGoogleFontDisplay": "warn",
 				"useGuardForIn": "warn",
-				"useImportRestrictions": "warn",
-				"useSortedClasses": "off", // Await support for screens and customised `tailwind.config.js`.
-				"useStrictMode": "warn",
-				"useTrimStartEnd": "warn",
-				"useValidAutocomplete": "warn"
+				"useIsArray": "warn",
+				"useIterableCallbackReturn": "off", // Rely on type checks in TypeScript to avoid false positives.
+				"useNamespaceKeyword": "warn",
+				"useNumberToFixedDigitsArgument": "warn",
+				"useStaticResponseMethods": "warn",
+				"useStrictMode": "warn"
+			},
+			//
+			// Opt in to nursery rules one by one to avoid unintentional breaking changes
+			// from new nursery rules introduced in future releases of Biome and to improve
+			// the result of `biome migrate`.
+			"nursery": {
+				"noFloatingPromises": "warn",
+				"noImportCycles": "warn",
+				"noMisusedPromises": "warn",
+				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js apps.
+				"noNonNullAssertedOptionalChain": "warn",
+				"noQwikUseVisibleTask": "off", // Not applicable outside Qwik apps.
+				"noSecrets": "off", // Allow regular non-secret strings with high entropy.
+				"noShadow": "warn",
+				"noUnnecessaryConditions": "warn",
+				"noUnresolvedImports": "off", // Await support for path aliases defined in `tsconfig.json`.
+				"noUselessUndefined": "warn",
+				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue apps.
+				"noVueReservedKeys": "off", // Not applicable outside Vue apps.
+				"noVueReservedProps": "off", // Not applicable outside Vue apps.
+				"useAnchorHref": "warn",
+				"useConsistentTypeDefinitions": {
+					"level": "warn",
+					"options": {
+						"style": "type" // Prefer the type alias syntax to improve flexibility regarding union types, intersection types, and generic wrappers such as `Readonly<T>` and `Partial<T>`.
+					}
+				},
+				"useExhaustiveSwitchCases": "warn",
+				"useExplicitType": "warn",
+				"useImageSize": "warn",
+				"useMaxParams": "warn",
+				"useQwikClasslist": "off", // Not applicable outside Qwik apps.
+				"useReactFunctionComponents": "warn",
+				"useSortedClasses": {
+					"level": "warn",
+					"fix": "safe", // Let Biome sort Tailwind CSS classes automatically.
+					"options": {
+						"functions": ["clsx", "cn", "cva", "cx", "tw", "tw.*"]
+					}
+				}
 			}
 		}
 	},
 	"overrides": [
 		{
-			// Provide support for ambient TypeScript modules (i.e. type declaration files).
-			"include": ["src/**/*.d.ts"],
+			// Ambient TypeScript modules (i.e. type declaration files).
+			"includes": ["src/**/*.d.ts"],
 			"linter": {
 				"rules": {
 					"style": {
@@ -363,22 +481,25 @@
 								"conventions": [
 									{
 										"selector": {
-											"kind": "typeProperty", // Ignore properties for third-party compatibility reasons.
+											"kind": "typeProperty", // Ignore properties to make it easier to integrate with third-party libraries that use different naming conventions.
 											"scope": "any"
 										},
 										"match": ".*"
 									}
 								],
-								"strictCase": false // Allow consecutive uppercase letters for third-party compatibility reasons.
+								"strictCase": false // Allow consecutive uppercase letters to make it easier to integrate with third-party libraries that use different naming conventions.
 							}
 						}
+					},
+					"nursery": {
+						"useConsistentTypeDefinitions": "off" // Allow interfaces for type declaration merging.
 					}
 				}
 			}
 		},
 		{
-			// Provide support for configuration files in a Node.js- and ESM-based toolchain.
-			"include": ["*.config.js", "*.config.ts"],
+			// Configuration files in Node.js- and ESM-based toolchains.
+			"includes": ["*.config.js", "*.config.ts"],
 			"linter": {
 				"rules": {
 					"correctness": {
@@ -391,11 +512,8 @@
 							"options": {
 								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention motivated by the `.config.{js,ts}` extension.
 							}
-						}
-					},
-					"nursery": {
-						"noProcessEnv": "off", // Allow accessing environment variables in configuration files.
-						"useImportRestrictions": "off" // Allow relative import statements in configuration files.
+						},
+						"noProcessEnv": "off" // Allow access to environment variables in configuration files.
 					}
 				}
 			}
