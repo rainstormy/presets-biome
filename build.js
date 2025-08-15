@@ -1,32 +1,35 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises"
 
-const sourceDirectory = "src"
-const destinationDirectory = "dist"
-const reservedFilenames = ["biome.json", "package.json"]
+const versionDirectories = ["2.2"]
+await Promise.all(versionDirectories.map(buildVersion))
 
-await mkdir(destinationDirectory, { recursive: true })
+async function buildVersion(versionDirectory) {
+	const sourceDirectory = `src/${versionDirectory}`
+	const destinationDirectory = `dist/${versionDirectory}`
+	const reservedFilenames = ["biome.json", "package.json"]
 
-const filenames = await readdir("src")
-await Promise.all(filenames.filter(isJsonWithComments).map(buildFile))
+	await mkdir(destinationDirectory, { recursive: true })
 
-function isJsonWithComments(filename) {
-	return filename.endsWith(".jsonc")
-}
+	const filenames = await readdir(sourceDirectory)
+	await Promise.all(filenames.map(buildFile))
 
-async function buildFile(filename) {
-	if (reservedFilenames.includes(filename)) {
-		throw new Error(`${filename}: Reserved filename.`)
-	}
+	async function buildFile(filename) {
+		const destinationFilename = filename.slice(0, -1) // Convert `.jsonc` to `.json`.
 
-	const sourcePath = `${sourceDirectory}/${filename}`
-	const destinationPath = `${destinationDirectory}/${filename.slice(0, -1)}`
+		if (reservedFilenames.includes(destinationFilename)) {
+			throw new Error(`${filename}: Reserved filename.`)
+		}
 
-	try {
-		const content = await readFile(sourcePath, "utf8")
-		const output = minifyJson(removeJsonLineComments(content))
-		await writeFile(destinationPath, output, "utf8")
-	} catch (error) {
-		throw new Error(`${filename}: ${error.message}.`)
+		const sourcePath = `${sourceDirectory}/${filename}`
+		const destinationPath = `${destinationDirectory}/${destinationFilename}`
+
+		try {
+			const content = await readFile(sourcePath, "utf8")
+			const output = minifyJson(removeJsonLineComments(content))
+			await writeFile(destinationPath, output, "utf8")
+		} catch (error) {
+			throw new Error(`${filename}: ${error.message}.`)
+		}
 	}
 }
 
@@ -35,5 +38,6 @@ function removeJsonLineComments(jsonContent) {
 }
 
 function minifyJson(jsonContent) {
-	return JSON.stringify(JSON.parse(jsonContent))
+	const { $schema: _ignored, ...remainingFields } = JSON.parse(jsonContent)
+	return JSON.stringify(remainingFields)
 }
