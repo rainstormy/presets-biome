@@ -3,7 +3,13 @@
 	"name": "@rainstormy/presets-biome",
 	"version": "1.0.0",
 	"description": "Predefined, opinionated Biome configurations suitable for any web project.",
-	"keywords": ["biome", "formatter", "formatting", "linter", "linting"],
+	"keywords": [
+		"biome",
+		"formatter",
+		"formatting",
+		"linter",
+		"linting"
+	],
 	"bugs": "https://github.com/rainstormy/presets-biome/issues",
 	"repository": {
 		"type": "git",
@@ -13,15 +19,17 @@
 	"author": "Steffen Diswal",
 	"type": "module",
 	"exports": {
-		"./base": "./dist/base.json",
-		"./nextjs": "./dist/nextjs.json",
-		"./react-router": "./dist/react-router.json",
-		"./storybook": "./dist/storybook.json",
-		"./vitest": "./dist/vitest.json"
+		"./2.2": "./dist/2.2/index.json",
+		"./2.2/nextjs": "./dist/2.2/nextjs.json",
+		"./2.2/react-router": "./dist/2.2/react-router.json",
+		"./2.2/storybook": "./dist/2.2/storybook.json",
+		"./2.2/vitest": "./dist/2.2/vitest.json"
 	},
-	"files": ["dist/"],
+	"files": [
+		"dist/"
+	],
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.2.0",
 		"lefthook": "1.12.2"
 	},
 	"// devDependencies": {
@@ -29,7 +37,7 @@
 		"lefthook": "Lefthook is a Git hooks manager."
 	},
 	"peerDependencies": {
-		"@biomejs/biome": ">=1.9.0 <1.10.0"
+		"@biomejs/biome": ">=2.2.0 <2.3.0"
 	},
 	"// peerDependencies": {
 		"@biomejs/biome": "The preset is made for Biome. When declared as a peer dependency, the package manager will remind the user to install it. The limited version range ensures compatibility with the nursery rules in Biome."

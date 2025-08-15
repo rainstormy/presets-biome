@@ -1,35 +1,22 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"files": {
-		"ignore": ["storybook-static/"]
-	},
+	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// Provide support for CSF3-based stories in Storybook.
+			// CSF3-based stories in Storybook.
 			// https://storybook.js.org/docs/api/csf
-			"include": ["src/**/*.stories.ts", "src/**/*.stories.tsx"],
+			"includes": ["src/**/*.stories.ts", "src/**/*.stories.tsx"],
 			"linter": {
 				"rules": {
-					"complexity": {
-						"noExcessiveCognitiveComplexity": {
-							"level": "warn",
-							"options": {
-								"maxAllowedComplexity": 2 // Limit conditional logic in stories.
-							}
-						}
-					},
-					"performance": {
-						"useTopLevelRegex": "off" // Allow inline regex selectors in Testing Library queries in story interaction tests.
-					},
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of static metadata required by Storybook.
+						"useComponentExportOnlyModules": "off", // Allow exports of stories and static metadata required by Storybook.
 						"useNamingConvention": {
 							"level": "warn",
 							"options": {
 								"conventions": [
 									{
 										"selector": {
-											"kind": "objectLiteralMember", // Inherited from `base.jsonc`.
+											"kind": "objectLiteralMember", // Inherited from `index.jsonc`.
 											"scope": "any"
 										},
 										"match": ".*"
@@ -44,17 +31,40 @@
 								]
 							}
 						}
-					},
-					"nursery": {
-						"useComponentExportOnlyModules": "off" // Allow exports of stories and static metadata required by Storybook.
 					}
 				}
 			}
 		},
 		{
-			// Provide support for Storybook configuration files.
+			"includes": [
+				"src/**/*.fixtures.ts",
+				"src/**/*.fixtures.tsx",
+				"src/**/*.stories.ts",
+				"src/**/*.stories.tsx"
+			],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "warn",
+							"options": {
+								"maxAllowedComplexity": 2 // Inherited from `vitest.jsonc`.
+							}
+						}
+					},
+					"performance": {
+						"useTopLevelRegex": "off" // Inherited from `vitest.jsonc`.
+					},
+					"style": {
+						"useNumericSeparators": "off" // Inherited from `vitest.jsonc`.
+					}
+				}
+			}
+		},
+		{
+			// Storybook configuration files.
 			// https://storybook.js.org/docs/configure
-			"include": [
+			"includes": [
 				".storybook/main.ts",
 				".storybook/main.tsx",
 				".storybook/manager.ts",
@@ -69,15 +79,7 @@
 					},
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of configuration objects required by Storybook.
-						"useFilenamingConvention": {
-							"level": "warn",
-							"options": {
-								"filenameCases": ["kebab-case"] // Allow the kebab-case naming convention required by Storybook.
-							}
-						}
-					},
-					"nursery": {
-						"useImportRestrictions": "off" // Allow relative import statements in Storybook configuration files.
+						"useFilenamingConvention": "off" // Allow the kebab-case naming convention required by Storybook.
 					}
 				}
 			}

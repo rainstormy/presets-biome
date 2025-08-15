@@ -1,12 +1,9 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"files": {
-		"ignore": ["build/"]
-	},
+	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// Provide support for React components.
-			"include": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			// React components and hooks.
+			"includes": ["src/**/*.ts", "src/**/*.tsx"],
 			"linter": {
 				"rules": {
 					"correctness": {
@@ -19,16 +16,13 @@
 			}
 		},
 		{
-			// Provide support for file routes.
+			// File routes.
 			// https://reactrouter.com/how-to/file-route-conventions
-			"include": ["src/app/routes/**.tsx", "src/app/root.tsx"],
+			"includes": ["src/routes/**.tsx", "src/root.tsx"],
 			"linter": {
 				"rules": {
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of routes required by React Router.
-						"useFilenamingConvention": "off" // Allow all route names.
-					},
-					"nursery": {
 						"useComponentExportOnlyModules": {
 							"level": "warn",
 							"options": {
@@ -49,15 +43,16 @@
 									"shouldRevalidate"
 								]
 							}
-						}
+						},
+						"useFilenamingConvention": "off" // Allow all route names.
 					}
 				}
 			}
 		},
 		{
-			// Provide support for the route configuration.
+			// Route configuration.
 			// https://reactrouter.com/how-to/file-route-conventions
-			"include": ["src/app/routes.ts"],
+			"includes": ["src/routes.ts"],
 			"linter": {
 				"rules": {
 					"style": {
