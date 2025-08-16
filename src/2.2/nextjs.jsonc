@@ -88,6 +88,21 @@
 			}
 		},
 		{
+			"includes": ["src/mdx-components.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useNamingConvention": {
+							"level": "warn",
+							"options": {
+								"strictCase": false // Allow consecutive uppercase letters in the `useMDXComponents` function required by Next.js.
+							}
+						}
+					}
+				}
+			}
+		},
+		{
 			// Route handlers.
 			// https://nextjs.org/docs/app/building-your-application/routing/route-handlers
 			"includes": ["src/app/**/route.ts"],
