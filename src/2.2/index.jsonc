@@ -440,7 +440,7 @@
 				"noSecrets": "off", // Allow regular non-secret strings with high entropy.
 				"noShadow": "warn",
 				"noUnnecessaryConditions": "warn",
-				"noUnresolvedImports": "off", // Await support for path aliases defined in `tsconfig.json`.
+				"noUnresolvedImports": "off", // Rely on module import checks in TypeScript.
 				"noUselessUndefined": "warn",
 				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue apps.
 				"noVueReservedKeys": "off", // Not applicable outside Vue apps.
