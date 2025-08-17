@@ -22,6 +22,21 @@
 			}
 		},
 		{
+			"includes": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useFilenamingConvention": {
+							"level": "warn",
+							"options": {
+								"match": "Non-route files are not allowed in the `app` directory" // Disallow non-route files in the `app` directory. The regex never matches the file extensions of the glob patterns in `includes`.
+							}
+						}
+					}
+				}
+			}
+		},
+		{
 			// App router.
 			// https://nextjs.org/docs/app/api-reference/file-conventions
 			"includes": [
