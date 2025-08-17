@@ -20,7 +20,10 @@ following exceptions:
   - `@rainstormy/presets-biome/2.2/storybook`
   - `@rainstormy/presets-biome/2.2/vitest`
 - Recognise `forbidden.tsx`, `unauthorized.tsx`, and `instrumentation-client.ts` as files in the `nextjs` preset.
+
+### Changed
 - Disallow non-route files in the `app` directory in the `nextjs` preset.
+- Allow regex literals anywhere in configuration files.
 
 ### Removed
 - **BREAKING:** Presets for Biome 1.9.4:
