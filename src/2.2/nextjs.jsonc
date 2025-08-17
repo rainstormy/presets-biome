@@ -22,12 +22,28 @@
 			}
 		},
 		{
+			"includes": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useFilenamingConvention": {
+							"level": "warn",
+							"options": {
+								"match": "Non-route files are not allowed in the `app` directory" // Disallow non-route files in the `app` directory. The regex never matches the file extensions of the glob patterns in `includes`.
+							}
+						}
+					}
+				}
+			}
+		},
+		{
 			// App router.
 			// https://nextjs.org/docs/app/api-reference/file-conventions
 			"includes": [
 				"src/app/**/apple-icon.tsx",
 				"src/app/**/default.tsx",
 				"src/app/**/error.tsx",
+				"src/app/**/forbidden.tsx",
 				"src/app/**/global-error.tsx",
 				"src/app/**/icon.tsx",
 				"src/app/**/layout.tsx",
@@ -38,6 +54,7 @@
 				"src/app/**/sitemap.ts",
 				"src/app/**/template.tsx",
 				"src/app/**/twitter-image.tsx",
+				"src/app/**/unauthorized.tsx",
 				"src/app/manifest.ts",
 				"src/app/robots.ts"
 			],
@@ -70,6 +87,7 @@
 			"includes": [
 				"src/app/**/route.ts",
 				"src/instrumentation.ts",
+				"src/instrumentation-client.ts",
 				"src/instrumentation-edge.ts",
 				"src/instrumentation-node.ts",
 				"src/mdx-components.tsx",
@@ -80,6 +98,21 @@
 				"rules": {
 					"style": {
 						"useFilenamingConvention": "off" // Allow the filenames required by Next.js.
+					}
+				}
+			}
+		},
+		{
+			"includes": ["src/mdx-components.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useNamingConvention": {
+							"level": "warn",
+							"options": {
+								"strictCase": false // Allow consecutive uppercase letters in the `useMDXComponents` function required by Next.js.
+							}
+						}
 					}
 				}
 			}

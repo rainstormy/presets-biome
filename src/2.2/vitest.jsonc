@@ -43,6 +43,14 @@
 							}
 						}
 					},
+					"correctness": {
+						"noUndeclaredDependencies": {
+							"level": "warn",
+							"options": {
+								"devDependencies": true // Allow importing development-only dependencies in unit tests and mocks.
+							}
+						}
+					},
 					"performance": {
 						"useTopLevelRegex": "off" // Allow inline regex selectors in Testing Library queries.
 					},

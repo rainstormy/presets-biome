@@ -52,6 +52,14 @@
 							}
 						}
 					},
+					"correctness": {
+						"noUndeclaredDependencies": {
+							"level": "warn",
+							"options": {
+								"devDependencies": true // Inherited from `vitest.jsonc`.
+							}
+						}
+					},
 					"performance": {
 						"useTopLevelRegex": "off" // Inherited from `vitest.jsonc`.
 					},
