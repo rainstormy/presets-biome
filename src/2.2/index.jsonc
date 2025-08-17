@@ -503,7 +503,13 @@
 			"linter": {
 				"rules": {
 					"correctness": {
-						"noNodejsModules": "off" // Allow importing Node.js-specific modules such as `node:path` and `node:url` in configuration files.
+						"noNodejsModules": "off", // Allow importing Node.js-specific modules such as `node:path` and `node:url` in configuration files.
+						"noUndeclaredDependencies": {
+							"level": "warn",
+							"options": {
+								"devDependencies": true // Allow importing development-only dependencies in configuration files.
+							}
+						}
 					},
 					"style": {
 						"noDefaultExport": "off", // Allow default exports in configuration files.
