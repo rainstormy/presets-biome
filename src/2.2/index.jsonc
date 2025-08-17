@@ -511,6 +511,9 @@
 							}
 						}
 					},
+					"performance": {
+						"useTopLevelRegex": "off" // Allow regex literals anywhere in configuration files to improve readability.
+					},
 					"style": {
 						"noDefaultExport": "off", // Allow default exports in configuration files.
 						"useFilenamingConvention": {
