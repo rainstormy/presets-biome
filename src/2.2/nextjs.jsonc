@@ -3,7 +3,7 @@
 	"overrides": [
 		{
 			// React components and hooks.
-			"includes": ["src/**/*.ts", "src/**/*.tsx"],
+			"includes": ["src/**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"correctness": {
@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"includes": ["src/app/**/*.ts", "src/app/**/*.tsx"],
+			"includes": ["src/app/**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"style": {
@@ -87,9 +87,7 @@
 			"includes": [
 				"src/app/**/route.ts",
 				"src/instrumentation.ts",
-				"src/instrumentation-client.ts",
-				"src/instrumentation-edge.ts",
-				"src/instrumentation-node.ts",
+				"src/instrumentation-{client,edge,node}.ts",
 				"src/mdx-components.tsx",
 				"src/middleware.ts",
 				"next-env.d.ts"

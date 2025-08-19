@@ -4,12 +4,9 @@
 		{
 			// Unit test suites and mocks in Vitest.
 			"includes": [
-				"src/**/*.fixtures.ts",
-				"src/**/*.fixtures.tsx",
-				"src/**/*.mocks.ts",
-				"src/**/*.mocks.tsx",
-				"src/**/*.tests.ts",
-				"src/**/*.tests.tsx"
+				"src/**/*.fixtures.{ts,tsx}",
+				"src/**/*.mocks.{ts,tsx}",
+				"src/**/*.tests.{ts,tsx}"
 			],
 			"assist": {
 				"actions": {

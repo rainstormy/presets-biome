@@ -499,7 +499,7 @@
 		},
 		{
 			// Configuration files in Node.js- and ESM-based toolchains.
-			"includes": ["*.config.js", "*.config.ts"],
+			"includes": ["*.config.{js,ts}"],
 			"linter": {
 				"rules": {
 					"correctness": {
