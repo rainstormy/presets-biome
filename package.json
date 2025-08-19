@@ -2,13 +2,21 @@
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@rainstormy/presets-biome",
 	"version": "2.0.0-alpha.2",
-	"description": "Predefined, opinionated Biome configurations suitable for any web project.",
+	"description": "Predefined, opinionated Biome configurations carefully crafted for modern TypeScript projects with add-ons for Next.js, React Router, Storybook, and Vitest.",
 	"keywords": [
 		"biome",
+		"configs",
 		"formatter",
 		"formatting",
 		"linter",
-		"linting"
+		"linting",
+		"next",
+		"nextjs",
+		"react",
+		"react-router",
+		"storybook",
+		"typescript",
+		"vitest"
 	],
 	"bugs": "https://github.com/rainstormy/presets-biome/issues",
 	"repository": {
