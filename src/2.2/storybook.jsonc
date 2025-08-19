@@ -2,9 +2,9 @@
 	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// CSF3-based stories in Storybook.
+			// CSF 3-based stories in Storybook.
 			// https://storybook.js.org/docs/api/csf
-			"includes": ["src/**/*.stories.ts", "src/**/*.stories.tsx"],
+			"includes": ["src/**/*.stories.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"style": {
@@ -31,17 +31,15 @@
 								]
 							}
 						}
+					},
+					"nursery": {
+						"useExplicitType": "off" // Prefer type inference in stories to improve readability.
 					}
 				}
 			}
 		},
 		{
-			"includes": [
-				"src/**/*.fixtures.ts",
-				"src/**/*.fixtures.tsx",
-				"src/**/*.stories.ts",
-				"src/**/*.stories.tsx"
-			],
+			"includes": ["src/**/*.fixtures.{ts,tsx}", "src/**/*.stories.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"complexity": {
@@ -73,12 +71,9 @@
 			// Storybook configuration files.
 			// https://storybook.js.org/docs/configure
 			"includes": [
-				".storybook/main.ts",
-				".storybook/main.tsx",
-				".storybook/manager.ts",
-				".storybook/manager.tsx",
-				".storybook/preview.ts",
-				".storybook/preview.tsx"
+				".storybook/main.{ts,tsx}",
+				".storybook/manager.{ts,tsx}",
+				".storybook/preview.{ts,tsx}"
 			],
 			"linter": {
 				"rules": {

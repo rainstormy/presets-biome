@@ -3,7 +3,7 @@
 	"overrides": [
 		{
 			// React components and hooks.
-			"includes": ["src/**/*.ts", "src/**/*.tsx"],
+			"includes": ["src/**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"correctness": {
