@@ -2,7 +2,7 @@
 	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// CSF3-based stories in Storybook.
+			// CSF 3-based stories in Storybook.
 			// https://storybook.js.org/docs/api/csf
 			"includes": ["src/**/*.stories.{ts,tsx}"],
 			"linter": {
@@ -31,6 +31,9 @@
 								]
 							}
 						}
+					},
+					"nursery": {
+						"useExplicitType": "off" // Prefer type inference in stories to improve readability.
 					}
 				}
 			}

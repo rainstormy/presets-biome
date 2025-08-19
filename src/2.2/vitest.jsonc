@@ -2,7 +2,7 @@
 	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// Unit test suites and mocks in Vitest.
+			// Unit test suites, test fixtures, and module mocks in Vitest.
 			"includes": [
 				"src/**/*.fixtures.{ts,tsx}",
 				"src/**/*.mocks.{ts,tsx}",
@@ -44,7 +44,7 @@
 						"noUndeclaredDependencies": {
 							"level": "warn",
 							"options": {
-								"devDependencies": true // Allow importing development-only dependencies in unit tests and mocks.
+								"devDependencies": true // Allow importing development-only dependencies in tests.
 							}
 						}
 					},
@@ -53,6 +53,16 @@
 					},
 					"style": {
 						"useNumericSeparators": "off" // Prefer test data (e.g. ids and Unix epoch timestamps) without numeric separators to improve discoverability.
+					}
+				}
+			}
+		},
+		{
+			"includes": ["src/**/*.tests.{ts,tsx}"],
+			"linter": {
+				"rules": {
+					"nursery": {
+						"useExplicitType": "off" // Prefer type inference in unit tests to improve readability.
 					}
 				}
 			}
