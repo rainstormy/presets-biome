@@ -198,7 +198,7 @@
 				"noVoidTypeReturn": "warn",
 				"useExhaustiveDependencies": "off", // Not applicable outside React apps.
 				"useGraphqlNamedOperations": "warn",
-				"useHookAtTopLevel": "warn",
+				"useHookAtTopLevel": "off", // Not applicable outside React apps.
 				"useImportExtensions": "warn",
 				"useIsNan": "warn",
 				"useJsonImportAttributes": "warn",
