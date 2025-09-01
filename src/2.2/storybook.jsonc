@@ -2,11 +2,55 @@
 	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// CSF 3-based stories in Storybook.
+			// CSF 3-based stories in Storybook and test fixtures (such as fakes and stubs).
 			// https://storybook.js.org/docs/api/csf
+			"includes": ["src/**/*.fixtures.{ts,tsx}", "src/**/*.stories.{ts,tsx}"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUndeclaredDependencies": {
+							"level": "warn",
+							"options": {
+								"devDependencies": true // Inherited from `vitest.jsonc`.
+							}
+						}
+					},
+					"performance": {
+						"useTopLevelRegex": "off" // Inherited from `vitest.jsonc`.
+					},
+					"style": {
+						"useNumericSeparators": "off" // Inherited from `vitest.jsonc`.
+					}
+				}
+			}
+		},
+		{
+			"includes": ["src/**/*.fixtures.{ts,tsx}"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "warn",
+							"options": {
+								"maxAllowedComplexity": 7 // Inherited from `vitest.jsonc`.
+							}
+						}
+					}
+				}
+			}
+		},
+		{
 			"includes": ["src/**/*.stories.{ts,tsx}"],
 			"linter": {
 				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "warn",
+							"options": {
+								"maxAllowedComplexity": 3 // Inherited from `vitest.jsonc`.
+							}
+						}
+					},
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of static metadata required by Storybook.
 						"useComponentExportOnlyModules": "off", // Allow exports of stories and static metadata required by Storybook.
@@ -33,36 +77,7 @@
 						}
 					},
 					"nursery": {
-						"useExplicitType": "off" // Prefer type inference in stories to improve readability.
-					}
-				}
-			}
-		},
-		{
-			"includes": ["src/**/*.fixtures.{ts,tsx}", "src/**/*.stories.{ts,tsx}"],
-			"linter": {
-				"rules": {
-					"complexity": {
-						"noExcessiveCognitiveComplexity": {
-							"level": "warn",
-							"options": {
-								"maxAllowedComplexity": 2 // Inherited from `vitest.jsonc`.
-							}
-						}
-					},
-					"correctness": {
-						"noUndeclaredDependencies": {
-							"level": "warn",
-							"options": {
-								"devDependencies": true // Inherited from `vitest.jsonc`.
-							}
-						}
-					},
-					"performance": {
-						"useTopLevelRegex": "off" // Inherited from `vitest.jsonc`.
-					},
-					"style": {
-						"useNumericSeparators": "off" // Inherited from `vitest.jsonc`.
+						"useExplicitType": "off" // Inherited from `vitest.jsonc`.
 					}
 				}
 			}
