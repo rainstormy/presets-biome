@@ -2,7 +2,7 @@
 	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"overrides": [
 		{
-			// Unit test suites, test fixtures, and module mocks in Vitest.
+			// Unit test suites, test fixtures (such as fakes and stubs), and module mocks in Vitest.
 			"includes": [
 				"src/**/*.fixtures.{ts,tsx}",
 				"src/**/*.mocks.{ts,tsx}",
@@ -15,7 +15,7 @@
 							"level": "on",
 							"options": {
 								"groups": [
-									// Mock imports must come before regular imports so that Vitest can intercept and replace any later imports with mocks.
+									// Module mock imports must come before regular imports so that Vitest can intercept and replace any later imports with mocks.
 									["**/*.mocks", "**/*.mocks.*"],
 									//
 									// Inherited from `index.jsonc`.
@@ -32,14 +32,6 @@
 			},
 			"linter": {
 				"rules": {
-					"complexity": {
-						"noExcessiveCognitiveComplexity": {
-							"level": "warn",
-							"options": {
-								"maxAllowedComplexity": 2 // Limit conditional logic in tests.
-							}
-						}
-					},
 					"correctness": {
 						"noUndeclaredDependencies": {
 							"level": "warn",
@@ -58,9 +50,32 @@
 			}
 		},
 		{
+			"includes": ["src/**/*.fixtures.{ts,tsx}", "src/**/*.mocks.{ts,tsx}"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "warn",
+							"options": {
+								"maxAllowedComplexity": 7 // Allow fakes, stubs, and module mocks to contain small amounts of conditional logic.
+							}
+						}
+					}
+				}
+			}
+		},
+		{
 			"includes": ["src/**/*.tests.{ts,tsx}"],
 			"linter": {
 				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "warn",
+							"options": {
+								"maxAllowedComplexity": 3 // Limit conditional logic in tests.
+							}
+						}
+					},
 					"nursery": {
 						"useExplicitType": "off" // Prefer type inference in unit tests to improve readability.
 					}

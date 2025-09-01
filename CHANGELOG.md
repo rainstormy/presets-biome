@@ -12,6 +12,11 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Changed
+- Increase the maximum complexity level in stories and unit tests to 3.
+- Increase the maximum complexity level in module mocks and test fixtures such
+  as fakes and stubs to 7.
+
 ### Fixed
 - Disable [useHookAtTopLevel](https://biomejs.dev/linter/rules/use-hook-at-top-level)
   in non-React contexts.
