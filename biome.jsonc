@@ -2,7 +2,12 @@
 	"$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
 	"extends": ["src/2.2/index.jsonc"],
 	"files": {
-		"includes": [".github/**", ".vscode/**", "src/**", "*.{js,json,jsonc}"]
+		"includes": [
+			".github/**/*",
+			".vscode/**/*",
+			"src/**/*",
+			"*.{js,json,jsonc}"
+		]
 	},
 	"overrides": [
 		{
