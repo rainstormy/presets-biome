@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.0.1] - 2025-09-03
 ### Changed
 - Increase the maximum complexity level in stories and unit tests to 3.
 - Increase the maximum complexity level in module mocks and test fixtures such
@@ -54,6 +56,7 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.0...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/rainstormy/presets-biome/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/rainstormy/presets-biome/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/rainstormy/presets-biome/releases/tag/v1.0.0
