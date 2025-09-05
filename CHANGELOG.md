@@ -12,6 +12,10 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Changed
+- Upgrade Biome to 2.2.3.
+- Enable [noUselessCatchBinding](https://biomejs.dev/linter/rules/no-useless-catch-binding)
+  and [useConsistentArrowReturn](https://biomejs.dev/linter/rules/use-consistent-arrow-return).
 
 ## [2.0.1] - 2025-09-03
 ### Changed
