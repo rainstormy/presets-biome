@@ -71,15 +71,15 @@ usual. For example:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
   "extends": [
     "@rainstormy/presets-biome/2.2"
   ],
   "files": {
     "includes": [
-      ".github/**",
-      ".vscode/**",
-      "src/**",
+      ".github/**/*",
+      ".vscode/**/*",
+      "src/**/*",
       "*.{js,json,jsonc,ts}"
     ]
   },
@@ -172,17 +172,17 @@ the following kinds of files in Storybook (naming convention in parentheses):
 }
 ```
 
-Add `.storybook/**` to the `files.includes` array to cover Storybook
+Add `.storybook/**/*` to the `files.includes` array to cover Storybook
 configuration files:
 
 ```json
 {
   "files": {
     "includes": [
-      ".github/**",
-      ".storybook/**",
-      ".vscode/**",
-      "src/**",
+      ".github/**/*",
+      ".storybook/**/*",
+      ".vscode/**/*",
+      "src/**/*",
       "*.{js,json,jsonc,ts}"
     ]
   }

@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -441,11 +441,13 @@
 				"noShadow": "warn",
 				"noUnnecessaryConditions": "off", // Avoid false positives in switch statements and mutable variables.
 				"noUnresolvedImports": "off", // Rely on module import checks in TypeScript.
+				"noUselessCatchBinding": "warn",
 				"noUselessUndefined": "warn",
 				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue apps.
 				"noVueReservedKeys": "off", // Not applicable outside Vue apps.
 				"noVueReservedProps": "off", // Not applicable outside Vue apps.
 				"useAnchorHref": "warn",
+				"useConsistentArrowReturn": "warn",
 				"useConsistentTypeDefinitions": {
 					"level": "warn",
 					"options": {
@@ -464,7 +466,8 @@
 					"options": {
 						"functions": ["clsx", "cn", "cva", "cx", "tw", "tw.*"]
 					}
-				}
+				},
+				"useVueMultiWordComponentNames": "off" // Not applicable outside Vue apps.
 			}
 		}
 	},
