@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.0.2] - 2025-09-06
 ### Changed
 - Upgrade Biome to 2.2.3.
 - Enable [noUselessCatchBinding](https://biomejs.dev/linter/rules/no-useless-catch-binding)
@@ -60,7 +62,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.1...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/rainstormy/presets-biome/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/rainstormy/presets-biome/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/rainstormy/presets-biome/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/rainstormy/presets-biome/releases/tag/v1.0.0
