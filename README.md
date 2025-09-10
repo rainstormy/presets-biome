@@ -71,7 +71,7 @@ usual. For example:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "extends": [
     "@rainstormy/presets-biome/2.2"
   ],
