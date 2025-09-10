@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+- Upgrade Biome to 2.2.4.
+- Enable [noDuplicateDependencies](https://biomejs.dev/linter/rules/no-duplicate-dependencies).
 
 ## [2.0.2] - 2025-09-06
 ### Changed
