@@ -12,6 +12,11 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+- Upgrade Biome to 2.2.5.
+- Enable [noDeprecatedImports](https://biomejs.dev/linter/rules/no-deprecated-imports)
+  and [noUnusedExpressions](https://biomejs.dev/linter/rules/no-unused-expressions).
+- Enable [noReactForwardRef](https://biomejs.dev/linter/rules/no-react-forward-ref)
+  in React contexts.
 
 ## [2.0.3] - 2025-09-10
 - Upgrade Biome to 2.2.4.

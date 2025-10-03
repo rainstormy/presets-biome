@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -431,6 +431,7 @@
 			// from new nursery rules introduced in future releases of Biome and to improve
 			// the result of `biome migrate`.
 			"nursery": {
+				"noDeprecatedImports": "warn",
 				"noDuplicateDependencies": "warn",
 				"noFloatingPromises": "warn",
 				"noImportCycles": "warn",
@@ -439,13 +440,16 @@
 				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js apps.
 				"noNonNullAssertedOptionalChain": "warn",
 				"noQwikUseVisibleTask": "off", // Not applicable outside Qwik apps.
+				"noReactForwardRef": "off", // Not applicable outside React apps.
 				"noSecrets": "off", // Allow regular non-secret strings with high entropy.
 				"noShadow": "warn",
 				"noUnnecessaryConditions": "off", // Avoid false positives in switch statements and mutable variables.
 				"noUnresolvedImports": "off", // Rely on module import checks in TypeScript.
+				"noUnusedExpressions": "warn",
 				"noUselessCatchBinding": "warn",
 				"noUselessUndefined": "warn",
 				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue apps.
+				"noVueDuplicateKeys": "off", // Not applicable outside Vue apps.
 				"noVueReservedKeys": "off", // Not applicable outside Vue apps.
 				"noVueReservedProps": "off", // Not applicable outside Vue apps.
 				"useAnchorHref": "warn",

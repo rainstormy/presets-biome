@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
 	"overrides": [
 		{
 			// React components and hooks.
@@ -12,6 +12,9 @@
 					},
 					"suspicious": {
 						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
+					},
+					"nursery": {
+						"noReactForwardRef": "warn"
 					}
 				}
 			}
