@@ -53,9 +53,6 @@ jobs:
           # Use a separate access token with permission to commit and push.
           token: ${{ secrets.BOT_NIMBUS_GH_AUTH_TOKEN }}
         #
-      - name: Restore the build artefacts to be distributed in the release
-        uses: ./.github/actions/build-artefacts
-        #
       - name: Update the release artefacts
         uses: rainstormy/updraft@23bb449c54a4e967c87a6943a1ef9a237eafdb99 # v1.2.0
         with:
