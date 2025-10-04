@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.0.4] - 2025-10-04
 - Upgrade Biome to 2.2.5.
 - Enable [noDeprecatedImports](https://biomejs.dev/linter/rules/no-deprecated-imports)
   and [noUnusedExpressions](https://biomejs.dev/linter/rules/no-unused-expressions).
@@ -71,7 +73,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.3...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.4...HEAD
+[2.0.4]: https://github.com/rainstormy/presets-biome/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/rainstormy/presets-biome/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/rainstormy/presets-biome/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/rainstormy/presets-biome/compare/v2.0.0...v2.0.1
