@@ -12,6 +12,12 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Changed
+- Enable [noExcessiveNestedTestSuites](https://biomejs.dev/linter/rules/no-excessive-nested-test-suites),
+  [noDuplicateTestHooks](https://biomejs.dev/linter/rules/no-duplicate-test-hooks),
+  [noExportsInTest](https://biomejs.dev/linter/rules/no-exports-in-test), and
+  [noFocusedTests](https://biomejs.dev/linter/rules/no-focused-tests) only in
+  the `vitest` preset.
 
 ## [2.0.4] - 2025-10-04
 - Upgrade Biome to 2.2.5.

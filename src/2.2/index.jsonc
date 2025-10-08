@@ -97,7 +97,7 @@
 				"noEmptyTypeParameters": "warn",
 				"noExcessiveCognitiveComplexity": "warn",
 				"noExcessiveLinesPerFunction": "off", // Rely on `lint/complexity/noExcessiveCognitiveComplexity` instead.
-				"noExcessiveNestedTestSuites": "warn",
+				"noExcessiveNestedTestSuites": "off", // Not applicable outside unit tests.
 				"noExtraBooleanCast": "warn",
 				"noFlatMapIdentity": "warn",
 				"noForEach": "warn",
@@ -364,16 +364,16 @@
 				"noDuplicateParameters": "warn",
 				"noDuplicateProperties": "warn",
 				"noDuplicateSelectorsKeyframeBlock": "warn",
-				"noDuplicateTestHooks": "warn",
+				"noDuplicateTestHooks": "off", // Not applicable outside unit tests.
 				"noEmptyBlock": "warn",
 				"noEmptyBlockStatements": "warn",
 				"noEmptyInterface": "warn",
 				"noEvolvingTypes": "warn",
 				"noExplicitAny": "warn",
-				"noExportsInTest": "warn",
+				"noExportsInTest": "off", // Not applicable outside unit tests.
 				"noExtraNonNullAssertion": "warn",
 				"noFallthroughSwitchClause": "warn",
-				"noFocusedTests": "warn",
+				"noFocusedTests": "off", // Not applicable outside unit tests.
 				"noFunctionAssign": "warn",
 				"noGlobalAssign": "warn",
 				"noGlobalIsFinite": "warn",
