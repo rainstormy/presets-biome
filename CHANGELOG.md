@@ -20,13 +20,15 @@ following exceptions:
   the `vitest` preset.
 
 ## [2.0.4] - 2025-10-04
+### Changed
 - Upgrade Biome to 2.2.5.
 - Enable [noDeprecatedImports](https://biomejs.dev/linter/rules/no-deprecated-imports)
   and [noUnusedExpressions](https://biomejs.dev/linter/rules/no-unused-expressions).
 - Enable [noReactForwardRef](https://biomejs.dev/linter/rules/no-react-forward-ref)
-  in React contexts.
+  in the `nextjs` and `react-router` presets.
 
 ## [2.0.3] - 2025-09-10
+### Changed
 - Upgrade Biome to 2.2.4.
 - Enable [noDuplicateDependencies](https://biomejs.dev/linter/rules/no-duplicate-dependencies).
 
@@ -43,8 +45,8 @@ following exceptions:
   as fakes and stubs to 7.
 
 ### Fixed
-- Disable [useHookAtTopLevel](https://biomejs.dev/linter/rules/use-hook-at-top-level)
-  in non-React contexts.
+- Enable [useHookAtTopLevel](https://biomejs.dev/linter/rules/use-hook-at-top-level)
+  only in the `nextjs` and `react-router` presets.
 
 ## [2.0.0] - 2025-08-20
 ### Added
