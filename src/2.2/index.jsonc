@@ -34,6 +34,9 @@
 					"level": "on",
 					"options": {
 						"groups": [
+							// Module mock imports must come before regular imports to make them interceptable and able to replace any later imports with mocks.
+							["**/*.mocks", "**/*.mocks.*"],
+							//
 							":URL:",
 							[":BUN:", ":NODE:", ":PACKAGE_WITH_PROTOCOL:"],
 							":PACKAGE:",

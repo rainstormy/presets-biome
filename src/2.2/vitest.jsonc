@@ -8,28 +8,6 @@
 				"src/**/*.mocks.{ts,tsx}",
 				"src/**/*.tests.{ts,tsx}"
 			],
-			"assist": {
-				"actions": {
-					"source": {
-						"organizeImports": {
-							"level": "on",
-							"options": {
-								"groups": [
-									// Module mock imports must come before regular imports so that Vitest can intercept and replace any later imports with mocks.
-									["**/*.mocks", "**/*.mocks.*"],
-									//
-									// Inherited from `index.jsonc`.
-									":URL:",
-									[":BUN:", ":NODE:", ":PACKAGE_WITH_PROTOCOL:"],
-									":PACKAGE:",
-									":ALIAS:",
-									":PATH:"
-								]
-							}
-						}
-					}
-				}
-			},
 			"linter": {
 				"rules": {
 					"correctness": {
