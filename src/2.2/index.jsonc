@@ -97,7 +97,7 @@
 				"noEmptyTypeParameters": "warn",
 				"noExcessiveCognitiveComplexity": "warn",
 				"noExcessiveLinesPerFunction": "off", // Rely on `lint/complexity/noExcessiveCognitiveComplexity` instead.
-				"noExcessiveNestedTestSuites": "warn",
+				"noExcessiveNestedTestSuites": "off", // Not applicable outside unit tests.
 				"noExtraBooleanCast": "warn",
 				"noFlatMapIdentity": "warn",
 				"noForEach": "warn",
@@ -196,9 +196,9 @@
 				"noUnusedVariables": "warn",
 				"noVoidElementsWithChildren": "warn",
 				"noVoidTypeReturn": "warn",
-				"useExhaustiveDependencies": "off", // Not applicable outside React apps.
+				"useExhaustiveDependencies": "off", // Not applicable outside React.
 				"useGraphqlNamedOperations": "warn",
-				"useHookAtTopLevel": "off", // Not applicable outside React apps.
+				"useHookAtTopLevel": "off", // Not applicable outside React.
 				"useImportExtensions": "warn",
 				"useIsNan": "warn",
 				"useJsonImportAttributes": "warn",
@@ -216,12 +216,12 @@
 				"noBarrelFile": "warn",
 				"noDelete": "warn",
 				"noDynamicNamespaceImportAccess": "warn",
-				"noImgElement": "off", // Not applicable outside Next.js apps.
+				"noImgElement": "off", // Not applicable outside Next.js.
 				"noNamespaceImport": "warn",
 				"noReExportAll": "warn",
 				"noUnwantedPolyfillio": "warn",
 				"useGoogleFontPreconnect": "warn",
-				"useSolidForComponent": "off", // Not applicable outside Solid apps.
+				"useSolidForComponent": "off", // Not applicable outside Solid.
 				"useTopLevelRegex": "warn"
 			},
 			"security": {
@@ -364,16 +364,16 @@
 				"noDuplicateParameters": "warn",
 				"noDuplicateProperties": "warn",
 				"noDuplicateSelectorsKeyframeBlock": "warn",
-				"noDuplicateTestHooks": "warn",
+				"noDuplicateTestHooks": "off", // Not applicable outside unit tests.
 				"noEmptyBlock": "warn",
 				"noEmptyBlockStatements": "warn",
 				"noEmptyInterface": "warn",
 				"noEvolvingTypes": "warn",
 				"noExplicitAny": "warn",
-				"noExportsInTest": "warn",
+				"noExportsInTest": "off", // Not applicable outside unit tests.
 				"noExtraNonNullAssertion": "warn",
 				"noFallthroughSwitchClause": "warn",
-				"noFocusedTests": "warn",
+				"noFocusedTests": "off", // Not applicable outside unit tests.
 				"noFunctionAssign": "warn",
 				"noGlobalAssign": "warn",
 				"noGlobalIsFinite": "warn",
@@ -437,10 +437,10 @@
 				"noImportCycles": "warn",
 				"noJsxLiterals": "off", // Prefer HTML-like string literals over JavaScript string expressions in JSX to reduce noise and improve readability.
 				"noMisusedPromises": "warn",
-				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js apps.
+				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js.
 				"noNonNullAssertedOptionalChain": "warn",
-				"noQwikUseVisibleTask": "off", // Not applicable outside Qwik apps.
-				"noReactForwardRef": "off", // Not applicable outside React apps.
+				"noQwikUseVisibleTask": "off", // Not applicable outside Qwik.
+				"noReactForwardRef": "off", // Not applicable outside React.
 				"noSecrets": "off", // Allow regular non-secret strings with high entropy.
 				"noShadow": "warn",
 				"noUnnecessaryConditions": "off", // Avoid false positives in switch statements and mutable variables.
@@ -448,10 +448,10 @@
 				"noUnusedExpressions": "warn",
 				"noUselessCatchBinding": "warn",
 				"noUselessUndefined": "warn",
-				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue apps.
-				"noVueDuplicateKeys": "off", // Not applicable outside Vue apps.
-				"noVueReservedKeys": "off", // Not applicable outside Vue apps.
-				"noVueReservedProps": "off", // Not applicable outside Vue apps.
+				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue.
+				"noVueDuplicateKeys": "off", // Not applicable outside Vue.
+				"noVueReservedKeys": "off", // Not applicable outside Vue.
+				"noVueReservedProps": "off", // Not applicable outside Vue.
 				"useAnchorHref": "warn",
 				"useConsistentArrowReturn": "warn",
 				"useConsistentTypeDefinitions": {
@@ -464,7 +464,7 @@
 				"useExplicitType": "warn",
 				"useImageSize": "warn",
 				"useMaxParams": "warn",
-				"useQwikClasslist": "off", // Not applicable outside Qwik apps.
+				"useQwikClasslist": "off", // Not applicable outside Qwik.
 				"useReactFunctionComponents": "warn",
 				"useSortedClasses": {
 					"level": "warn",
@@ -473,7 +473,7 @@
 						"functions": ["clsx", "cn", "cva", "cx", "tw", "tw.*"]
 					}
 				},
-				"useVueMultiWordComponentNames": "off" // Not applicable outside Vue apps.
+				"useVueMultiWordComponentNames": "off" // Not applicable outside Vue.
 			}
 		}
 	},

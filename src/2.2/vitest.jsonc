@@ -74,7 +74,13 @@
 							"options": {
 								"maxAllowedComplexity": 3 // Limit conditional logic in tests.
 							}
-						}
+						},
+						"noExcessiveNestedTestSuites": "warn"
+					},
+					"suspicious": {
+						"noDuplicateTestHooks": "warn",
+						"noExportsInTest": "warn",
+						"noFocusedTests": "warn"
 					},
 					"nursery": {
 						"useExplicitType": "off" // Prefer type inference in unit tests to improve readability.
