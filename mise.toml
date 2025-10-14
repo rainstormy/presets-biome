@@ -41,7 +41,7 @@ alias = ["cr"]
 
 [tasks.fmt]
 # language=sh
-run = "biome check --write"
+run = "biome check --skip-parse-errors --write"
 description = "Reformats the source code with Biome."
 alias = ["f"]
 
