@@ -4,7 +4,11 @@
 		{
 			// CSF 3-based stories in Storybook and test fixtures (such as fakes and stubs).
 			// https://storybook.js.org/docs/api/csf
-			"includes": ["src/**/*.fixtures.{ts,tsx}", "src/**/*.stories.{ts,tsx}"],
+			"includes": [
+				"src/**/*.decorators.{ts,tsx}",
+				"src/**/*.fixtures.{ts,tsx}",
+				"src/**/*.stories.{ts,tsx}"
+			],
 			"linter": {
 				"rules": {
 					"correctness": {

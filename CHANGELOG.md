@@ -22,6 +22,10 @@ following exceptions:
   [noExportsInTest](https://biomejs.dev/linter/rules/no-exports-in-test), and
   [noFocusedTests](https://biomejs.dev/linter/rules/no-focused-tests) only in
   the `vitest` preset, disabling them in the base preset.
+- Disable [useTopLevelRegex](https://biomejs.dev/linter/rules/use-top-level-regex)
+  and [useNumericSeparators](https://biomejs.dev/linter/rules/use-numeric-separators)
+  in story decorators.
+- Allow importing `devDependencies` in story decorators.
 
 ## [2.0.4] - 2025-10-04
 ### Added
