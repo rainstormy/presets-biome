@@ -13,35 +13,43 @@ following exceptions:
 
 ## [Unreleased]
 ### Changed
+- Promote import sorting of module mocks (`*.mocks.{ts,tsx}`) to the base
+  preset.
+
+### Fixed
 - Enable [noExcessiveNestedTestSuites](https://biomejs.dev/linter/rules/no-excessive-nested-test-suites),
   [noDuplicateTestHooks](https://biomejs.dev/linter/rules/no-duplicate-test-hooks),
   [noExportsInTest](https://biomejs.dev/linter/rules/no-exports-in-test), and
   [noFocusedTests](https://biomejs.dev/linter/rules/no-focused-tests) only in
   the `vitest` preset, disabling them in the base preset.
-- Promote import sorting of module mocks (`*.mocks.{ts,tsx}`) to the base
-  preset.
 
 ## [2.0.4] - 2025-10-04
-### Changed
-- Upgrade Biome to 2.2.5.
+### Added
 - Enable [noDeprecatedImports](https://biomejs.dev/linter/rules/no-deprecated-imports)
   and [noUnusedExpressions](https://biomejs.dev/linter/rules/no-unused-expressions)
   in the base preset.
 - Enable [noReactForwardRef](https://biomejs.dev/linter/rules/no-react-forward-ref)
   in the `nextjs` and `react-router` presets.
 
-## [2.0.3] - 2025-09-10
 ### Changed
-- Upgrade Biome to 2.2.4.
+- Upgrade Biome to 2.2.5.
+
+## [2.0.3] - 2025-09-10
+### Added
 - Enable [noDuplicateDependencies](https://biomejs.dev/linter/rules/no-duplicate-dependencies)
   in the base preset.
 
-## [2.0.2] - 2025-09-06
 ### Changed
-- Upgrade Biome to 2.2.3.
+- Upgrade Biome to 2.2.4.
+
+## [2.0.2] - 2025-09-06
+### Added
 - Enable [noUselessCatchBinding](https://biomejs.dev/linter/rules/no-useless-catch-binding)
   and [useConsistentArrowReturn](https://biomejs.dev/linter/rules/use-consistent-arrow-return)
   in the base preset.
+
+### Changed
+- Upgrade Biome to 2.2.3.
 
 ## [2.0.1] - 2025-09-03
 ### Changed
