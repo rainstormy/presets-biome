@@ -8,28 +8,6 @@
 				"src/**/*.mocks.{ts,tsx}",
 				"src/**/*.tests.{ts,tsx}"
 			],
-			"assist": {
-				"actions": {
-					"source": {
-						"organizeImports": {
-							"level": "on",
-							"options": {
-								"groups": [
-									// Module mock imports must come before regular imports so that Vitest can intercept and replace any later imports with mocks.
-									["**/*.mocks", "**/*.mocks.*"],
-									//
-									// Inherited from `index.jsonc`.
-									":URL:",
-									[":BUN:", ":NODE:", ":PACKAGE_WITH_PROTOCOL:"],
-									":PACKAGE:",
-									":ALIAS:",
-									":PATH:"
-								]
-							}
-						}
-					}
-				}
-			},
 			"linter": {
 				"rules": {
 					"correctness": {
@@ -50,14 +28,121 @@
 			}
 		},
 		{
-			"includes": ["src/**/*.fixtures.{ts,tsx}", "src/**/*.mocks.{ts,tsx}"],
+			"includes": ["src/**/*.fixtures.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"complexity": {
 						"noExcessiveCognitiveComplexity": {
 							"level": "warn",
 							"options": {
-								"maxAllowedComplexity": 7 // Allow fakes, stubs, and module mocks to contain small amounts of conditional logic.
+								"maxAllowedComplexity": 7 // Allow fakes and stubs to contain small amounts of conditional logic.
+							}
+						}
+					},
+					"style": {
+						"noRestrictedImports": {
+							"level": "warn",
+							"options": {
+								"patterns": [
+									{
+										"group": ["/**/*", "**/./**/*", "**/../**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer path aliases over relative paths in import statements."
+									},
+									{
+										"group": ["**//**/*", "!https://**/*"], // Inherited from `index.jsonc`.
+										"message": "Remove repeated slash characters in import statements."
+									},
+									{
+										"group": ["#/**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer namespaced path aliases (e.g. '#lib/*' and '#utilities/*') over a global wildcard path alias like '#/*'."
+									},
+									{
+										"group": [
+											// Inherited from `index.jsonc`.
+											"@/**/*",
+											"~*/**/*",
+											"$*/**/*",
+											"%*/**/*",
+											"+*/**/*"
+										],
+										"message": "Prefer '#' as the prefix of path aliases."
+									},
+									{
+										"group": ["**/*.decorators", "**/*.decorators.*"],
+										"message": "Do not import story decorators in test fixtures."
+									},
+									{
+										"group": ["**/*.mocks", "**/*.mocks.*"], // Module mocks won't be hoisted correctly when they are imported into a test file indirectly through a test fixture.
+										"message": "Do not import module mocks in test fixtures."
+									},
+									{
+										"group": ["**/*.stories", "**/*.stories.*"],
+										"message": "Do not import stories in test fixtures."
+									},
+									{
+										"group": ["**/*.tests", "**/*.tests.*"],
+										"message": "Do not import tests in test fixtures."
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"includes": ["src/**/*.mocks.{ts,tsx}"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": {
+							"level": "warn",
+							"options": {
+								"maxAllowedComplexity": 7 // Allow module mocks to contain small amounts of conditional logic.
+							}
+						}
+					},
+					"style": {
+						"noRestrictedImports": {
+							"level": "warn",
+							"options": {
+								"patterns": [
+									{
+										"group": ["/**/*", "**/./**/*", "**/../**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer path aliases over relative paths in import statements."
+									},
+									{
+										"group": ["**//**/*", "!https://**/*"], // Inherited from `index.jsonc`.
+										"message": "Remove repeated slash characters in import statements."
+									},
+									{
+										"group": ["#/**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer namespaced path aliases (e.g. '#lib/*' and '#utilities/*') over a global wildcard path alias like '#/*'."
+									},
+									{
+										"group": [
+											// Inherited from `index.jsonc`.
+											"@/**/*",
+											"~*/**/*",
+											"$*/**/*",
+											"%*/**/*",
+											"+*/**/*"
+										],
+										"message": "Prefer '#' as the prefix of path aliases."
+									},
+									{
+										"group": ["**/*.decorators", "**/*.decorators.*"],
+										"message": "Do not import story decorators in module mocks."
+									},
+									{
+										"group": ["**/*.stories", "**/*.stories.*"],
+										"message": "Do not import stories in module mocks."
+									},
+									{
+										"group": ["**/*.tests", "**/*.tests.*"],
+										"message": "Do not import tests in module mocks."
+									}
+								]
 							}
 						}
 					}
@@ -76,6 +161,50 @@
 							}
 						},
 						"noExcessiveNestedTestSuites": "warn"
+					},
+					"style": {
+						"noRestrictedImports": {
+							"level": "warn",
+							"options": {
+								"patterns": [
+									{
+										"group": ["/**/*", "**/./**/*", "**/../**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer path aliases over relative paths in import statements."
+									},
+									{
+										"group": ["**//**/*", "!https://**/*"], // Inherited from `index.jsonc`.
+										"message": "Remove repeated slash characters in import statements."
+									},
+									{
+										"group": ["#/**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer namespaced path aliases (e.g. '#lib/*' and '#utilities/*') over a global wildcard path alias like '#/*'."
+									},
+									{
+										"group": [
+											// Inherited from `index.jsonc`.
+											"@/**/*",
+											"~*/**/*",
+											"$*/**/*",
+											"%*/**/*",
+											"+*/**/*"
+										],
+										"message": "Prefer '#' as the prefix of path aliases."
+									},
+									{
+										"group": ["**/*.decorators", "**/*.decorators.*"],
+										"message": "Do not import story decorators in tests."
+									},
+									{
+										"group": ["**/*.stories", "**/*.stories.*"],
+										"message": "Do not import stories in tests."
+									},
+									{
+										"group": ["**/*.tests", "**/*.tests.*"],
+										"message": "Do not import other tests in tests."
+									}
+								]
+							}
+						}
 					},
 					"suspicious": {
 						"noDuplicateTestHooks": "warn",

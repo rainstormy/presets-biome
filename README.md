@@ -13,6 +13,8 @@ rules in Biome with a few twists:
 - **Locate source code in the `src` directory** to improve discoverability and
   scalability by simplifying glob patterns and giving all projects a consistent
   structure.
+- **Use path aliases prefixed by `#`** to normalise all import statements, thus
+  reducing diff churn and preserving compatibility with Node.js subpath imports.
 - **Omit semicolons** and rely fully
   on [automatic semicolon insertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion)
   to reduce cognitive complexity and visual noise in the code. Using semicolons
@@ -34,8 +36,8 @@ rules in Biome with a few twists:
 - **Use `function` declarations** instead of `const` with arrow functions to
   improve type safety and to enable top-down declaration orders, as function
   declarations are hoisted.
-- **Import `devDependencies` only in non-production code** such as configuration
-  files and tests to prevent accidental bundling of development dependencies in
+- **Disallow importing `devDependencies` and test files in production code** to
+  prevent accidental bundling of development dependencies and test data in
   production artefacts.
 - **Use PascalCase for filenames** to reduce cognitive complexity by sticking to
   a simple naming convention that is consistent with type names and component

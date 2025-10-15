@@ -4,7 +4,11 @@
 		{
 			// CSF 3-based stories in Storybook and test fixtures (such as fakes and stubs).
 			// https://storybook.js.org/docs/api/csf
-			"includes": ["src/**/*.fixtures.{ts,tsx}", "src/**/*.stories.{ts,tsx}"],
+			"includes": [
+				"src/**/*.decorators.{ts,tsx}",
+				"src/**/*.fixtures.{ts,tsx}",
+				"src/**/*.stories.{ts,tsx}"
+			],
 			"linter": {
 				"rules": {
 					"correctness": {
@@ -25,6 +29,57 @@
 			}
 		},
 		{
+			"includes": ["src/**/*.decorators.{ts,tsx}"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noRestrictedImports": {
+							"level": "warn",
+							"options": {
+								"patterns": [
+									{
+										"group": ["/**/*", "**/./**/*", "**/../**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer path aliases over relative paths in import statements."
+									},
+									{
+										"group": ["**//**/*", "!https://**/*"], // Inherited from `index.jsonc`.
+										"message": "Remove repeated slash characters in import statements."
+									},
+									{
+										"group": ["#/**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer namespaced path aliases (e.g. '#lib/*' and '#utilities/*') over a global wildcard path alias like '#/*'."
+									},
+									{
+										"group": [
+											// Inherited from `index.jsonc`.
+											"@/**/*",
+											"~*/**/*",
+											"$*/**/*",
+											"%*/**/*",
+											"+*/**/*"
+										],
+										"message": "Prefer '#' as the prefix of path aliases."
+									},
+									{
+										"group": ["**/*.mocks", "**/*.mocks.*"],
+										"message": "Do not import module mocks in story decorators."
+									},
+									{
+										"group": ["**/*.stories", "**/*.stories.*"],
+										"message": "Do not import stories in story decorators."
+									},
+									{
+										"group": ["**/*.tests", "**/*.tests.*"],
+										"message": "Do not import tests in story decorators."
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
 			"includes": ["src/**/*.fixtures.{ts,tsx}"],
 			"linter": {
 				"rules": {
@@ -33,6 +88,54 @@
 							"level": "warn",
 							"options": {
 								"maxAllowedComplexity": 7 // Inherited from `vitest.jsonc`.
+							}
+						}
+					},
+					"style": {
+						"noRestrictedImports": {
+							"level": "warn",
+							"options": {
+								"patterns": [
+									{
+										"group": ["/**/*", "**/./**/*", "**/../**/*"], // Inherited from `vitest.jsonc`.
+										"message": "Prefer path aliases over relative paths in import statements."
+									},
+									{
+										"group": ["**//**/*", "!https://**/*"], // Inherited from `vitest.jsonc`.
+										"message": "Remove repeated slash characters in import statements."
+									},
+									{
+										"group": ["#/**/*"], // Inherited from `vitest.jsonc`.
+										"message": "Prefer namespaced path aliases (e.g. '#lib/*' and '#utilities/*') over a global wildcard path alias like '#/*'."
+									},
+									{
+										"group": [
+											// Inherited from `vitest.jsonc`.
+											"@/**/*",
+											"~*/**/*",
+											"$*/**/*",
+											"%*/**/*",
+											"+*/**/*"
+										],
+										"message": "Prefer '#' as the prefix of path aliases."
+									},
+									{
+										"group": ["**/*.decorators", "**/*.decorators.*"], // Inherited from `vitest.jsonc`.
+										"message": "Do not import story decorators in test fixtures."
+									},
+									{
+										"group": ["**/*.mocks", "**/*.mocks.*"], // Inherited from `vitest.jsonc`.
+										"message": "Do not import module mocks in test fixtures."
+									},
+									{
+										"group": ["**/*.stories", "**/*.stories.*"], // Inherited from `vitest.jsonc`.
+										"message": "Do not import stories in test fixtures."
+									},
+									{
+										"group": ["**/*.tests", "**/*.tests.*"], // Inherited from `vitest.jsonc`.
+										"message": "Do not import tests in test fixtures."
+									}
+								]
 							}
 						}
 					}
@@ -53,6 +156,40 @@
 					},
 					"style": {
 						"noDefaultExport": "off", // Allow default exports of static metadata required by Storybook.
+						"noRestrictedImports": {
+							"level": "warn",
+							"options": {
+								"patterns": [
+									{
+										"group": ["/**/*", "**/./**/*", "**/../**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer path aliases over relative paths in import statements."
+									},
+									{
+										"group": ["**//**/*", "!https://**/*"], // Inherited from `index.jsonc`.
+										"message": "Remove repeated slash characters in import statements."
+									},
+									{
+										"group": ["#/**/*"], // Inherited from `index.jsonc`.
+										"message": "Prefer namespaced path aliases (e.g. '#lib/*' and '#utilities/*') over a global wildcard path alias like '#/*'."
+									},
+									{
+										"group": [
+											// Inherited from `index.jsonc`.
+											"@/**/*",
+											"~*/**/*",
+											"$*/**/*",
+											"%*/**/*",
+											"+*/**/*"
+										],
+										"message": "Prefer '#' as the prefix of path aliases."
+									},
+									{
+										"group": ["**/*.tests", "**/*.tests.*"],
+										"message": "Do not import tests in stories."
+									}
+								]
+							}
+						},
 						"useComponentExportOnlyModules": "off", // Allow exports of stories and static metadata required by Storybook.
 						"useNamingConvention": {
 							"level": "warn",
@@ -96,7 +233,27 @@
 						"noNodejsModules": "off" // Allow importing Node.js-specific modules such as `node:path` and `node:url` in Storybook configuration files.
 					},
 					"style": {
-						"noDefaultExport": "off", // Allow default exports of configuration objects required by Storybook.
+						"noDefaultExport": "off", // Allow default exports of configuration objects required by Storybook
+						"noRestrictedImports": {
+							"level": "warn",
+							"options": {
+								"patterns": [
+									// Allow relative paths in import statements, as path aliases declared in `tsconfig.json` relative to the project root directory are not resolvable from the `.storybook/` directory.
+									{
+										"group": ["**//**/*", "!https://**/*"], // Inherited from `index.jsonc`.
+										"message": "Remove repeated slash characters in import statements."
+									},
+									{
+										"group": ["**/*.stories", "**/*.stories.*"],
+										"message": "Do not import stories in the Storybook configuration."
+									},
+									{
+										"group": ["**/*.tests", "**/*.tests.*"],
+										"message": "Do not import tests in the Storybook configuration."
+									}
+								]
+							}
+						},
 						"useFilenamingConvention": "off" // Allow the kebab-case naming convention required by Storybook.
 					}
 				}
