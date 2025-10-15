@@ -252,7 +252,55 @@
 				"noParameterProperties": "warn",
 				"noProcessEnv": "warn",
 				"noRestrictedGlobals": "warn",
-				"noRestrictedImports": "warn",
+				"noRestrictedImports": {
+					"level": "warn",
+					"options": {
+						"patterns": [
+							{
+								"group": ["/**/*", "**/./**/*", "**/../**/*"],
+								"message": "Prefer path aliases over relative paths in import statements." // Improve discoverability and reduce diff churn by normalising all import statements.
+							},
+							{
+								"group": ["**//**/*", "!https://**/*"],
+								"message": "Remove repeated slash characters in import statements."
+							},
+							{
+								"group": ["#/**/*"],
+								"message": "Prefer namespaced path aliases (e.g. '#lib/*' and '#utilities/*') over a global wildcard path alias like '#/*'." // Decouple path aliases from the directory structure.
+							},
+							{
+								"group": [
+									"@/**/*", // Allow importing scoped npm packages (i.e. `@scope/package-name`).
+									"~*/**/*",
+									"$*/**/*",
+									"%*/**/*",
+									"+*/**/*"
+								],
+								"message": "Prefer '#' as the prefix of path aliases." // Preserve compatibility with Node.js subpath imports.
+							},
+							{
+								"group": ["**/*.decorators", "**/*.decorators.*"],
+								"message": "Do not import story decorators in production code."
+							},
+							{
+								"group": ["**/*.fixtures", "**/*.fixtures.*"],
+								"message": "Do not import test fixtures in production code."
+							},
+							{
+								"group": ["**/*.mocks", "**/*.mocks.*"],
+								"message": "Do not import module mocks in production code."
+							},
+							{
+								"group": ["**/*.stories", "**/*.stories.*"],
+								"message": "Do not import stories in production code."
+							},
+							{
+								"group": ["**/*.tests", "**/*.tests.*"],
+								"message": "Do not import tests in production code."
+							}
+						]
+					}
+				},
 				"noRestrictedTypes": "warn",
 				"noShoutyConstants": "warn",
 				"noSubstr": "warn",

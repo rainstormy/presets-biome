@@ -12,6 +12,12 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Added
+- Define pattern groups
+  in [noRestrictedImports](https://biomejs.dev/linter/rules/no-restricted-imports)
+  to normalise import statements and prevent importing stories and tests in
+  production code.
+
 ### Changed
 - Promote import sorting of module mocks (`*.mocks.{ts,tsx}`) to the base
   preset.
