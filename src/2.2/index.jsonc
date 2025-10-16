@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -511,11 +511,14 @@
 						"style": "type" // Prefer the type alias syntax to improve flexibility regarding union types, intersection types, and generic wrappers such as `Readonly<T>` and `Partial<T>`.
 					}
 				},
+				"useDeprecatedDate": "warn",
 				"useExhaustiveSwitchCases": "warn",
 				"useExplicitType": "warn",
 				"useImageSize": "warn",
 				"useMaxParams": "warn",
 				"useQwikClasslist": "off", // Not applicable outside Qwik.
+				"useQwikMethodUsage": "off", // Not applicable outside Qwik.
+				"useQwikValidLexicalScope": "off", // Not applicable outside Qwik.
 				"useReactFunctionComponents": "warn",
 				"useSortedClasses": {
 					"level": "warn",

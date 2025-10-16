@@ -17,8 +17,11 @@ following exceptions:
   in [noRestrictedImports](https://biomejs.dev/linter/rules/no-restricted-imports)
   to normalise import statements and prevent importing stories and tests in
   production code.
+- Enable [useDeprecatedDate](https://biomejs.dev/linter/rules/use-deprecated-date)
+  in the base preset.
 
 ### Changed
+- Upgrade Biome to 2.2.6.
 - Promote import sorting of module mocks (`*.mocks.{ts,tsx}`) to the base
   preset.
 
