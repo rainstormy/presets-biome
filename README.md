@@ -135,9 +135,11 @@ app router and React components in Next.js apps:
 }
 ```
 
-The `app` directory and the `instrumentation.ts` and `middleware.ts` files must
-reside in the `src` directory. React components and other files in general must
-_not_ reside in the `app` directory to improve the scalability of the project.
+The `app` directory and the `instrumentation.ts` and `middleware.ts`/`proxy.ts`
+files must reside in the `src` directory. React components and other files in
+general must _not_ reside in the `app` directory, decoupling them from the
+Next.js app router to improve the overall maintainability and scalability of the
+project.
 
 ### [React Router](https://reactrouter.com)
 Add `@rainstormy/presets-biome/2.2/react-router` to the `extends` array to
