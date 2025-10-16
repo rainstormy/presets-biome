@@ -19,6 +19,7 @@ following exceptions:
   production code.
 - Enable [useDeprecatedDate](https://biomejs.dev/linter/rules/use-deprecated-date)
   in the base preset.
+- Recognise the `proxy.ts` filename in the `nextjs` preset.
 
 ### Changed
 - Upgrade Biome to 2.2.6.

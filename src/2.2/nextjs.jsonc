@@ -92,6 +92,7 @@
 				"src/instrumentation-{client,edge,node}.ts",
 				"src/mdx-components.tsx",
 				"src/middleware.ts",
+				"src/proxy.ts",
 				"next-env.d.ts"
 			],
 			"linter": {
