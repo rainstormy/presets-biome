@@ -12,14 +12,19 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
-### Added
+### Strictened
 - Define pattern groups
   in [noRestrictedImports](https://biomejs.dev/linter/rules/no-restricted-imports)
   to normalise import statements and prevent importing stories and tests in
   production code.
 - Enable [useDeprecatedDate](https://biomejs.dev/linter/rules/use-deprecated-date)
   in the base preset.
-- Recognise the `proxy.ts` filename in the `nextjs` preset.
+
+### Relaxed
+- Disable [useTopLevelRegex](https://biomejs.dev/linter/rules/use-top-level-regex)
+  and [useNumericSeparators](https://biomejs.dev/linter/rules/use-numeric-separators)
+  in story decorators.
+- Allow importing `devDependencies` in story decorators.
 
 ### Changed
 - Upgrade Biome to 2.2.6.
@@ -32,13 +37,10 @@ following exceptions:
   [noExportsInTest](https://biomejs.dev/linter/rules/no-exports-in-test), and
   [noFocusedTests](https://biomejs.dev/linter/rules/no-focused-tests) only in
   the `vitest` preset, disabling them in the base preset.
-- Disable [useTopLevelRegex](https://biomejs.dev/linter/rules/use-top-level-regex)
-  and [useNumericSeparators](https://biomejs.dev/linter/rules/use-numeric-separators)
-  in story decorators.
-- Allow importing `devDependencies` in story decorators.
+- Recognise the `proxy.ts` filename in the `nextjs` preset.
 
 ## [2.0.4] - 2025-10-04
-### Added
+### Strictened
 - Enable [noDeprecatedImports](https://biomejs.dev/linter/rules/no-deprecated-imports)
   and [noUnusedExpressions](https://biomejs.dev/linter/rules/no-unused-expressions)
   in the base preset.
@@ -49,7 +51,7 @@ following exceptions:
 - Upgrade Biome to 2.2.5.
 
 ## [2.0.3] - 2025-09-10
-### Added
+### Strictened
 - Enable [noDuplicateDependencies](https://biomejs.dev/linter/rules/no-duplicate-dependencies)
   in the base preset.
 
@@ -57,7 +59,7 @@ following exceptions:
 - Upgrade Biome to 2.2.4.
 
 ## [2.0.2] - 2025-09-06
-### Added
+### Strictened
 - Enable [noUselessCatchBinding](https://biomejs.dev/linter/rules/no-useless-catch-binding)
   and [useConsistentArrowReturn](https://biomejs.dev/linter/rules/use-consistent-arrow-return)
   in the base preset.
@@ -66,7 +68,7 @@ following exceptions:
 - Upgrade Biome to 2.2.3.
 
 ## [2.0.1] - 2025-09-03
-### Changed
+### Relaxed
 - Increase the maximum complexity level in stories and unit tests to 3.
 - Increase the maximum complexity level in module mocks and test fixtures such
   as fakes and stubs to 7.
@@ -84,12 +86,16 @@ following exceptions:
   - `@rainstormy/presets-biome/2.2/react-router`
   - `@rainstormy/presets-biome/2.2/storybook`
   - `@rainstormy/presets-biome/2.2/vitest`
-- Recognise `forbidden.tsx`, `unauthorized.tsx`, and `instrumentation-client.ts`
-  as files in the `nextjs` preset.
 
-### Changed
+### Strictened
 - Disallow non-route files in the `app` directory in the `nextjs` preset.
+
+### Relaxed
 - Allow regex literals anywhere in configuration files.
+
+### Fixed
+- Recognise the `forbidden.tsx`, `unauthorized.tsx`, and
+  `instrumentation-client.ts` filenames in the `nextjs` preset.
 
 ### Removed
 - **BREAKING:** Presets for Biome 1.9.4:

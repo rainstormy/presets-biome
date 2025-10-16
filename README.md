@@ -64,12 +64,22 @@ yarn add --dev @biomejs/biome @rainstormy/presets-biome
 ```
 
 ## Usage
-Create a [`biome.json`](https://biomejs.dev/reference/configuration) file (or a
-`biome.jsonc` file)
+Create a [`biome.json`](https://biomejs.dev/reference/configuration)/
+`biome.jsonc` file
 and [extend](https://biomejs.dev/guides/configure-biome/#share-a-configuration-file)
 `@rainstormy/presets-biome/2.2` to enable the opinionated formatting and linting
-configuration in general. Specify other options like `files` and `overrides` as
-usual. For example:
+configuration in general:
+
+```json
+{
+  "extends": [
+    "@rainstormy/presets-biome/2.2"
+  ]
+}
+```
+
+Specify other options like `files` and custom `overrides` as usual. You can also
+override the presets as needed. For example:
 
 ```json
 {
@@ -85,6 +95,16 @@ usual. For example:
       "*.{js,json,jsonc,ts}"
     ]
   },
+  "javascript": {
+    "globals": ["Android"]
+  },
+  "linter": {
+    "rules": {
+      "correctness": {
+        "useImportExtensions": "off"
+      }
+    }
+  },
   "overrides": [
     {
       "includes": ["src/**/*.tsx"],
@@ -95,21 +115,20 @@ usual. For example:
               "level": "warn",
               "options": {
                 "elements": {
-                  "a": "Use <Hyperlink> instead of <a>"
+                  "a": "Use the 'Hyperlink' component instead of an 'a' element."
                 }
               }
             }
-          },
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/**/Use*.tsx"],
+      "linter": {
+        "rules": {
           "style": {
-            "noRestrictedImports": {
-              "level": "warn",
-              "options": {
-                "paths": {
-                  "next/image": "Use <FancyImage> instead of <NextImage>",
-                  "next/script": "Use <FancyScript> instead of <NextScript>"
-                }
-              }
-            }
+            "useComponentExportOnlyModules": "off"
           }
         }
       }
