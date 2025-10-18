@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.0.5] - 2025-10-18
 ### Strictened
 - Define pattern groups
   in [noRestrictedImports](https://biomejs.dev/linter/rules/no-restricted-imports)
@@ -115,7 +117,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.4...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.5...HEAD
+[2.0.5]: https://github.com/rainstormy/presets-biome/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/rainstormy/presets-biome/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/rainstormy/presets-biome/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/rainstormy/presets-biome/compare/v2.0.1...v2.0.2
