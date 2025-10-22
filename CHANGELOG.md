@@ -12,6 +12,12 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Strictened
+- Enable [noEmptySource](https://biomejs.dev/linter/rules/no-empty-source) in
+  the base preset.
+
+### Changed
+- Upgrade Biome to 2.2.7.
 
 ## [2.0.5] - 2025-10-18
 ### Strictened
