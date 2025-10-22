@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.0.6] - 2025-10-22
 ### Strictened
 - Enable [noEmptySource](https://biomejs.dev/linter/rules/no-empty-source) in
   the base preset.
@@ -123,7 +125,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.5...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.6...HEAD
+[2.0.6]: https://github.com/rainstormy/presets-biome/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/rainstormy/presets-biome/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/rainstormy/presets-biome/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/rainstormy/presets-biome/compare/v2.0.2...v2.0.3
