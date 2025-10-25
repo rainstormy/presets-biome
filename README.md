@@ -236,6 +236,9 @@ To reduce the likelihood of buggy tests, test files must remain simple in terms
 of cognitive complexity, limiting the use of conditional logic.
 
 ### Eject from the preset
-Copy the relevant parts of
-the [preset source files](https://github.com/rainstormy/presets-biome/tree/main/src/2.2)
-and insert them directly into the `biome.json` file. Make adjustments as needed.
+Copy the relevant parts of the distributed JSON files (see links below) and
+insert them directly into your `biome.json` file. Uninstall the
+`@rainstormy/presets-biome` package and remove it from the `extends` array. Make
+adjustments to the rules as needed.
+
+- [Biome 2.2.7](https://github.com/rainstormy/presets-biome/blob/main/dist/2.2)

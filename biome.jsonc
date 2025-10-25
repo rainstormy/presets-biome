@@ -1,6 +1,6 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.2.7/schema.json",
-	"extends": ["src/2.2/index.jsonc"],
+	"extends": ["src/index.jsonc"],
 	"files": {
 		"includes": [
 			".github/**/*",
