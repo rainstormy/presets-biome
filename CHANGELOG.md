@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.1.0] - 2025-10-26
 ### Added
 - Presets for Biome 2.3.0:
   - `@rainstormy/presets-biome/2.3`
@@ -137,7 +139,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.0.6...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/rainstormy/presets-biome/compare/v2.0.6...v2.1.0
 [2.0.6]: https://github.com/rainstormy/presets-biome/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/rainstormy/presets-biome/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/rainstormy/presets-biome/compare/v2.0.3...v2.0.4
