@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.7/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
 	"overrides": [
 		{
 			// React components and hooks.
@@ -12,6 +12,9 @@
 					},
 					"performance": {
 						"noImgElement": "off" // Allow self-hosting and custom image optimisation to improve flexibility.
+					},
+					"style": {
+						"useReactFunctionComponents": "warn"
 					},
 					"suspicious": {
 						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.

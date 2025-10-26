@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.7/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -161,6 +161,7 @@
 				"noPrecisionLoss": "warn",
 				"noPrivateImports": "warn",
 				"noProcessGlobal": "warn",
+				"noQwikUseVisibleTask": "off", // Not applicable outside Qwik.
 				"noReactPropAssignments": "warn",
 				"noRenderReturnValue": "warn",
 				"noRestrictedElements": "warn",
@@ -202,11 +203,13 @@
 				"useExhaustiveDependencies": "off", // Not applicable outside React.
 				"useGraphqlNamedOperations": "warn",
 				"useHookAtTopLevel": "off", // Not applicable outside React.
+				"useImageSize": "warn",
 				"useImportExtensions": "warn",
 				"useIsNan": "warn",
 				"useJsonImportAttributes": "warn",
 				"useJsxKeyInIterable": "warn",
 				"useParseIntRadix": "warn",
+				"useQwikClasslist": "off", // Not applicable outside Qwik.
 				"useSingleJsDocAsterisk": "warn",
 				"useUniqueElementIds": "off", // Allow hard-coded element ids to make it easier to integrate with third-party libraries that expect specific ids.
 				"useValidForDirection": "warn",
@@ -231,7 +234,8 @@
 				"noBlankTarget": "warn",
 				"noDangerouslySetInnerHtml": "warn",
 				"noDangerouslySetInnerHtmlWithChildren": "warn",
-				"noGlobalEval": "warn"
+				"noGlobalEval": "warn",
+				"noSecrets": "off" // Allow regular non-secret strings with high entropy.
 			},
 			"style": {
 				"noCommonJs": "warn",
@@ -329,6 +333,12 @@
 						"syntax": "shorthand" // Prefer the shorthand syntax to reduce noise and improve readability.
 					}
 				},
+				"useConsistentTypeDefinitions": {
+					"level": "warn",
+					"options": {
+						"style": "type" // Prefer the type alias syntax to improve flexibility regarding union types, intersection types, and generic wrappers such as `Readonly<T>` and `Partial<T>`.
+					}
+				},
 				"useConst": "warn",
 				"useDefaultParameterLast": "warn",
 				"useDefaultSwitchClause": "off", // Rely on exhaustiveness checks in TypeScript to reduce noise and improve readability.
@@ -369,6 +379,7 @@
 				"useNumberNamespace": "warn",
 				"useNumericSeparators": "warn",
 				"useObjectSpread": "warn",
+				"useReactFunctionComponents": "off", // Not applicable outside React.
 				"useReadonlyClassProperties": "warn",
 				"useSelfClosingElements": "warn",
 				"useShorthandAssign": "warn",
@@ -439,6 +450,7 @@
 				"noMisleadingInstantiator": "warn",
 				"noMisplacedAssertion": "warn",
 				"noMisrefactoredShorthandAssign": "warn",
+				"noNonNullAssertedOptionalChain": "warn",
 				"noOctalEscape": "warn",
 				"noPrototypeBuiltins": "warn",
 				"noQuickfixBiome": "warn",
@@ -490,10 +502,7 @@
 				"noJsxLiterals": "off", // Prefer HTML-like string literals over JavaScript string expressions in JSX to reduce noise and improve readability.
 				"noMisusedPromises": "warn",
 				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js.
-				"noNonNullAssertedOptionalChain": "warn",
-				"noQwikUseVisibleTask": "off", // Not applicable outside Qwik.
 				"noReactForwardRef": "off", // Not applicable outside React.
-				"noSecrets": "off", // Allow regular non-secret strings with high entropy.
 				"noShadow": "warn",
 				"noUnnecessaryConditions": "off", // Avoid false positives in switch statements and mutable variables.
 				"noUnresolvedImports": "off", // Rely on module import checks in TypeScript.
@@ -504,23 +513,13 @@
 				"noVueDuplicateKeys": "off", // Not applicable outside Vue.
 				"noVueReservedKeys": "off", // Not applicable outside Vue.
 				"noVueReservedProps": "off", // Not applicable outside Vue.
-				"useAnchorHref": "warn",
 				"useConsistentArrowReturn": "warn",
-				"useConsistentTypeDefinitions": {
-					"level": "warn",
-					"options": {
-						"style": "type" // Prefer the type alias syntax to improve flexibility regarding union types, intersection types, and generic wrappers such as `Readonly<T>` and `Partial<T>`.
-					}
-				},
 				"useDeprecatedDate": "warn",
 				"useExhaustiveSwitchCases": "warn",
 				"useExplicitType": "warn",
-				"useImageSize": "warn",
 				"useMaxParams": "warn",
-				"useQwikClasslist": "off", // Not applicable outside Qwik.
 				"useQwikMethodUsage": "off", // Not applicable outside Qwik.
 				"useQwikValidLexicalScope": "off", // Not applicable outside Qwik.
-				"useReactFunctionComponents": "warn",
 				"useSortedClasses": {
 					"level": "warn",
 					"fix": "safe", // Let Biome sort Tailwind CSS classes automatically.
@@ -528,6 +527,7 @@
 						"functions": ["clsx", "cn", "cva", "cx", "tw", "tw.*"]
 					}
 				},
+				"useVueDefineMacrosOrder": "off", // Not applicable outside Vue.
 				"useVueMultiWordComponentNames": "off" // Not applicable outside Vue.
 			}
 		}
@@ -539,6 +539,7 @@
 			"linter": {
 				"rules": {
 					"style": {
+						"useConsistentTypeDefinitions": "off", // Allow interfaces for type declaration merging.
 						"useNamingConvention": {
 							"level": "warn",
 							"options": {
@@ -554,9 +555,6 @@
 								"strictCase": false // Allow consecutive uppercase letters to make it easier to integrate with third-party libraries that use different naming conventions.
 							}
 						}
-					},
-					"nursery": {
-						"useConsistentTypeDefinitions": "off" // Allow interfaces for type declaration merging.
 					}
 				}
 			}

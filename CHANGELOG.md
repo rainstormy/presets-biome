@@ -12,6 +12,18 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Added
+- Presets for Biome 2.3.0:
+  - `@rainstormy/presets-biome/2.3`
+  - `@rainstormy/presets-biome/2.3/nextjs`
+  - `@rainstormy/presets-biome/2.3/react-router`
+  - `@rainstormy/presets-biome/2.3/storybook`
+  - `@rainstormy/presets-biome/2.3/vitest`
+
+### Fixed
+- Enable [useReactFunctionComponents](https://biomejs.dev/linter/rules/use-react-function-components)
+  only in the `nextjs` and `react-router` presets, disabling it in the base
+  preset.
 
 ## [2.0.6] - 2025-10-22
 ### Strictened
