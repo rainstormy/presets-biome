@@ -20,6 +20,11 @@ following exceptions:
   - `@rainstormy/presets-biome/2.3/storybook`
   - `@rainstormy/presets-biome/2.3/vitest`
 
+### Fixed
+- Enable [useReactFunctionComponents](https://biomejs.dev/linter/rules/use-react-function-components)
+  only in the `nextjs` and `react-router` presets, disabling it in the base
+  preset.
+
 ## [2.0.6] - 2025-10-22
 ### Strictened
 - Enable [noEmptySource](https://biomejs.dev/linter/rules/no-empty-source) in

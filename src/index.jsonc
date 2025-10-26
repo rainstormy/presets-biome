@@ -379,7 +379,7 @@
 				"useNumberNamespace": "warn",
 				"useNumericSeparators": "warn",
 				"useObjectSpread": "warn",
-				"useReactFunctionComponents": "warn",
+				"useReactFunctionComponents": "off", // Not applicable outside React.
 				"useReadonlyClassProperties": "warn",
 				"useSelfClosingElements": "warn",
 				"useShorthandAssign": "warn",

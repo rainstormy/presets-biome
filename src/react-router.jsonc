@@ -10,6 +10,9 @@
 						"useExhaustiveDependencies": "warn",
 						"useHookAtTopLevel": "warn"
 					},
+					"style": {
+						"useReactFunctionComponents": "warn"
+					},
 					"suspicious": {
 						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
 					},
