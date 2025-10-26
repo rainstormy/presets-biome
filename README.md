@@ -67,13 +67,13 @@ yarn add --dev @biomejs/biome @rainstormy/presets-biome
 Create a [`biome.json`](https://biomejs.dev/reference/configuration)/
 `biome.jsonc` file
 and [extend](https://biomejs.dev/guides/configure-biome/#share-a-configuration-file)
-`@rainstormy/presets-biome/2.2` to enable the opinionated formatting and linting
+`@rainstormy/presets-biome/2.3` to enable the opinionated formatting and linting
 configuration in general:
 
 ```json
 {
   "extends": [
-    "@rainstormy/presets-biome/2.2"
+    "@rainstormy/presets-biome/2.3"
   ]
 }
 ```
@@ -83,9 +83,9 @@ override the presets as needed. For example:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.7/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
   "extends": [
-    "@rainstormy/presets-biome/2.2"
+    "@rainstormy/presets-biome/2.3"
   ],
   "files": {
     "includes": [
@@ -142,14 +142,14 @@ override the presets as needed. For example:
 > in `extends`.
 
 ### [Next.js](https://nextjs.org)
-Add `@rainstormy/presets-biome/2.2/nextjs` to the `extends` array to support the
+Add `@rainstormy/presets-biome/2.3/nextjs` to the `extends` array to support the
 app router and React components in Next.js apps:
 
 ```json
 {
   "extends": [
-    "@rainstormy/presets-biome/2.2",
-    "@rainstormy/presets-biome/2.2/nextjs"
+    "@rainstormy/presets-biome/2.3",
+    "@rainstormy/presets-biome/2.3/nextjs"
   ]
 }
 ```
@@ -161,14 +161,14 @@ Next.js app router to improve the overall maintainability and scalability of the
 project.
 
 ### [React Router](https://reactrouter.com)
-Add `@rainstormy/presets-biome/2.2/react-router` to the `extends` array to
+Add `@rainstormy/presets-biome/2.3/react-router` to the `extends` array to
 support file routes and React components in React Router apps:
 
 ```json
 {
   "extends": [
-    "@rainstormy/presets-biome/2.2",
-    "@rainstormy/presets-biome/2.2/react-router"
+    "@rainstormy/presets-biome/2.3",
+    "@rainstormy/presets-biome/2.3/react-router"
   ]
 }
 ```
@@ -177,7 +177,7 @@ The `routes` directory and the `root.tsx` and `routes.ts` files must reside in
 the `src` directory.
 
 ### [Storybook](https://storybook.js.org)
-Add `@rainstormy/presets-biome/2.2/storybook` to the `extends` array to support
+Add `@rainstormy/presets-biome/2.3/storybook` to the `extends` array to support
 the following kinds of files in Storybook (naming convention in parentheses):
 
 - Stories based on
@@ -189,8 +189,8 @@ the following kinds of files in Storybook (naming convention in parentheses):
 ```json
 {
   "extends": [
-    "@rainstormy/presets-biome/2.2",
-    "@rainstormy/presets-biome/2.2/storybook"
+    "@rainstormy/presets-biome/2.3",
+    "@rainstormy/presets-biome/2.3/storybook"
   ]
 }
 ```
@@ -216,7 +216,7 @@ Stories must remain simple in terms of cognitive complexity, limiting the use of
 conditional logic.
 
 ### [Vitest](https://vitest.dev)
-Add `@rainstormy/presets-biome/2.2/vitest` to the `extends` array to support the
+Add `@rainstormy/presets-biome/2.3/vitest` to the `extends` array to support the
 following kinds of files in Vitest (naming convention in parentheses):
 
 - Unit test suites (`*.tests.{ts,tsx}`)
@@ -226,8 +226,8 @@ following kinds of files in Vitest (naming convention in parentheses):
 ```json
 {
   "extends": [
-    "@rainstormy/presets-biome/2.2",
-    "@rainstormy/presets-biome/2.2/vitest"
+    "@rainstormy/presets-biome/2.3",
+    "@rainstormy/presets-biome/2.3/vitest"
   ]
 }
 ```
@@ -242,3 +242,4 @@ insert them directly into your `biome.json` file. Uninstall the
 adjustments to the rules as needed.
 
 - [Biome 2.2.7](https://github.com/rainstormy/presets-biome/blob/main/dist/2.2)
+- [Biome 2.3.0](https://github.com/rainstormy/presets-biome/blob/main/dist/2.3)

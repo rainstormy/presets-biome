@@ -31,7 +31,12 @@
 		"./2.2/nextjs": "./dist/2.2/nextjs.json",
 		"./2.2/react-router": "./dist/2.2/react-router.json",
 		"./2.2/storybook": "./dist/2.2/storybook.json",
-		"./2.2/vitest": "./dist/2.2/vitest.json"
+		"./2.2/vitest": "./dist/2.2/vitest.json",
+		"./2.3": "./dist/2.3/index.json",
+		"./2.3/nextjs": "./dist/2.3/nextjs.json",
+		"./2.3/react-router": "./dist/2.3/react-router.json",
+		"./2.3/storybook": "./dist/2.3/storybook.json",
+		"./2.3/vitest": "./dist/2.3/vitest.json"
 	},
 	"files": [
 		"dist/"
