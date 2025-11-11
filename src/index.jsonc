@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.3/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -499,11 +499,14 @@
 				"noEmptySource": "warn",
 				"noFloatingPromises": "warn",
 				"noImportCycles": "warn",
+				"noIncrementDecrement": "warn", // Prefer consistent increment/decrement operations using += and -= instead of ++ and --.
 				"noJsxLiterals": "off", // Prefer HTML-like string literals over JavaScript string expressions in JSX to reduce noise and improve readability.
 				"noMisusedPromises": "warn",
 				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js.
+				"noParametersOnlyUsedInRecursion": "warn",
 				"noReactForwardRef": "off", // Not applicable outside React.
 				"noShadow": "warn",
+				"noUnknownAttribute": "off", // Not applicable outside React.
 				"noUnnecessaryConditions": "off", // Avoid false positives in switch statements and mutable variables.
 				"noUnresolvedImports": "off", // Rely on module import checks in TypeScript.
 				"noUnusedExpressions": "warn",

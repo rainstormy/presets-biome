@@ -12,6 +12,15 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Strictened
+- Enable [noIncrementDecrement](https://biomejs.dev/linter/rules/no-increment-decrement)
+  and [noParametersOnlyUsedInRecursion](https://biomejs.dev/linter/rules/no-parameters-only-used-in-recursion)
+  in the base preset.
+- Enable [noUnknownAttribute](https://biomejs.dev/linter/rules/no-unknown-attribute)
+  in the `nextjs` and `react-router` presets.
+
+### Changed
+- Upgrade Biome to 2.3.3.
 
 ## [2.1.0] - 2025-10-26
 ### Added
@@ -21,6 +30,14 @@ following exceptions:
   - `@rainstormy/presets-biome/2.3/react-router`
   - `@rainstormy/presets-biome/2.3/storybook`
   - `@rainstormy/presets-biome/2.3/vitest`
+
+### Deprecated
+- Presets for Biome 2.2.7:
+  - `@rainstormy/presets-biome/2.2`
+  - `@rainstormy/presets-biome/2.2/nextjs`
+  - `@rainstormy/presets-biome/2.2/react-router`
+  - `@rainstormy/presets-biome/2.2/storybook`
+  - `@rainstormy/presets-biome/2.2/vitest`
 
 ### Fixed
 - Enable [useReactFunctionComponents](https://biomejs.dev/linter/rules/use-react-function-components)
