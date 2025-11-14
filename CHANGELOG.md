@@ -13,14 +13,15 @@ following exceptions:
 
 ## [Unreleased]
 ### Strictened
-- Enable [noIncrementDecrement](https://biomejs.dev/linter/rules/no-increment-decrement)
-  and [noParametersOnlyUsedInRecursion](https://biomejs.dev/linter/rules/no-parameters-only-used-in-recursion)
-  in the base preset.
+- Enable [noContinue](https://biomejs.dev/linter/rules/no-continue),
+  [noIncrementDecrement](https://biomejs.dev/linter/rules/no-increment-decrement),
+  [noParametersOnlyUsedInRecursion](https://biomejs.dev/linter/rules/no-parameters-only-used-in-recursion),
+  and [useArraySortCompare](https://biomejs.dev/linter/rules/use-array-sort-compare) in the base preset.
 - Enable [noUnknownAttribute](https://biomejs.dev/linter/rules/no-unknown-attribute)
   in the `nextjs` and `react-router` presets.
 
 ### Changed
-- Upgrade Biome to 2.3.3.
+- Upgrade Biome to 2.3.5.
 
 ## [2.1.0] - 2025-10-26
 ### Added
