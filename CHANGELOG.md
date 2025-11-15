@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.1.1] - 2025-11-15
 ### Strictened
 - Enable [noContinue](https://biomejs.dev/linter/rules/no-continue),
   [noIncrementDecrement](https://biomejs.dev/linter/rules/no-increment-decrement),
@@ -157,7 +159,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.0...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/rainstormy/presets-biome/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/rainstormy/presets-biome/compare/v2.0.6...v2.1.0
 [2.0.6]: https://github.com/rainstormy/presets-biome/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/rainstormy/presets-biome/compare/v2.0.4...v2.0.5
