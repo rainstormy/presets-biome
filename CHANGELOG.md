@@ -15,12 +15,13 @@ following exceptions:
 
 ## [2.1.1] - 2025-11-15
 ### Strictened
-- Enable [noContinue](https://biomejs.dev/linter/rules/no-continue),
-  [noIncrementDecrement](https://biomejs.dev/linter/rules/no-increment-decrement),
-  [noParametersOnlyUsedInRecursion](https://biomejs.dev/linter/rules/no-parameters-only-used-in-recursion),
-  and [useArraySortCompare](https://biomejs.dev/linter/rules/use-array-sort-compare) in the base preset.
-- Enable [noUnknownAttribute](https://biomejs.dev/linter/rules/no-unknown-attribute)
-  in the `nextjs` and `react-router` presets.
+- Enable new rules in the base preset:
+  - [noContinue](https://biomejs.dev/linter/rules/no-continue)
+  - [noIncrementDecrement](https://biomejs.dev/linter/rules/no-increment-decrement)
+  - [noParametersOnlyUsedInRecursion](https://biomejs.dev/linter/rules/no-parameters-only-used-in-recursion)
+  - [useArraySortCompare](https://biomejs.dev/linter/rules/use-array-sort-compare)
+- Enable new rules in the `nextjs` and `react-router` presets:
+  - [noUnknownAttribute](https://biomejs.dev/linter/rules/no-unknown-attribute)
 
 ### Changed
 - Upgrade Biome to 2.3.5.
@@ -43,31 +44,30 @@ following exceptions:
   - `@rainstormy/presets-biome/2.2/vitest`
 
 ### Fixed
-- Enable [useReactFunctionComponents](https://biomejs.dev/linter/rules/use-react-function-components)
-  only in the `nextjs` and `react-router` presets, disabling it in the base
-  preset.
+- Enable rules only in the `nextjs` and `react-router` presets, disabling them
+  in the base preset:
+  - [useReactFunctionComponents](https://biomejs.dev/linter/rules/use-react-function-components)
 
 ## [2.0.6] - 2025-10-22
 ### Strictened
-- Enable [noEmptySource](https://biomejs.dev/linter/rules/no-empty-source) in
-  the base preset.
+- Enable new rules in the base preset:
+  - [noEmptySource](https://biomejs.dev/linter/rules/no-empty-source)
 
 ### Changed
 - Upgrade Biome to 2.2.7.
 
 ## [2.0.5] - 2025-10-18
 ### Strictened
-- Define pattern groups
-  in [noRestrictedImports](https://biomejs.dev/linter/rules/no-restricted-imports)
-  to normalise import statements and prevent importing stories and tests in
-  production code.
-- Enable [useDeprecatedDate](https://biomejs.dev/linter/rules/use-deprecated-date)
-  in the base preset.
+- Enable new rules in the base preset:
+  - [useDeprecatedDate](https://biomejs.dev/linter/rules/use-deprecated-date)
+- Require normalised import statements using `#` as path alias prefix.
+- Disallow relative import statements.
+- Disallow importing stories and tests in production code.
 
 ### Relaxed
-- Disable [useTopLevelRegex](https://biomejs.dev/linter/rules/use-top-level-regex)
-  and [useNumericSeparators](https://biomejs.dev/linter/rules/use-numeric-separators)
-  in story decorators.
+- Disable rules in story decorators:
+  - [useTopLevelRegex](https://biomejs.dev/linter/rules/use-top-level-regex)
+  - [useNumericSeparators](https://biomejs.dev/linter/rules/use-numeric-separators)
 - Allow importing `devDependencies` in story decorators.
 
 ### Changed
@@ -76,37 +76,37 @@ following exceptions:
   preset.
 
 ### Fixed
-- Enable [noExcessiveNestedTestSuites](https://biomejs.dev/linter/rules/no-excessive-nested-test-suites),
-  [noDuplicateTestHooks](https://biomejs.dev/linter/rules/no-duplicate-test-hooks),
-  [noExportsInTest](https://biomejs.dev/linter/rules/no-exports-in-test), and
-  [noFocusedTests](https://biomejs.dev/linter/rules/no-focused-tests) only in
-  the `vitest` preset, disabling them in the base preset.
+- Enable rules only in the `vitest` preset, disabling them in the base preset:
+  - [noDuplicateTestHooks](https://biomejs.dev/linter/rules/no-duplicate-test-hooks)
+  - [noExcessiveNestedTestSuites](https://biomejs.dev/linter/rules/no-excessive-nested-test-suites)
+  - [noExportsInTest](https://biomejs.dev/linter/rules/no-exports-in-test)
+  - [noFocusedTests](https://biomejs.dev/linter/rules/no-focused-tests)
 - Recognise the `proxy.ts` filename in the `nextjs` preset.
 
 ## [2.0.4] - 2025-10-04
 ### Strictened
-- Enable [noDeprecatedImports](https://biomejs.dev/linter/rules/no-deprecated-imports)
-  and [noUnusedExpressions](https://biomejs.dev/linter/rules/no-unused-expressions)
-  in the base preset.
-- Enable [noReactForwardRef](https://biomejs.dev/linter/rules/no-react-forward-ref)
-  in the `nextjs` and `react-router` presets.
+- Enable new rules in the base preset:
+  - [noDeprecatedImports](https://biomejs.dev/linter/rules/no-deprecated-imports)
+  - [noUnusedExpressions](https://biomejs.dev/linter/rules/no-unused-expressions)
+- Enable new rules in the `nextjs` and `react-router` presets:
+  - [noReactForwardRef](https://biomejs.dev/linter/rules/no-react-forward-ref)
 
 ### Changed
 - Upgrade Biome to 2.2.5.
 
 ## [2.0.3] - 2025-09-10
 ### Strictened
-- Enable [noDuplicateDependencies](https://biomejs.dev/linter/rules/no-duplicate-dependencies)
-  in the base preset.
+- Enable new rules in the base preset:
+  - [noDuplicateDependencies](https://biomejs.dev/linter/rules/no-duplicate-dependencies)
 
 ### Changed
 - Upgrade Biome to 2.2.4.
 
 ## [2.0.2] - 2025-09-06
 ### Strictened
-- Enable [noUselessCatchBinding](https://biomejs.dev/linter/rules/no-useless-catch-binding)
-  and [useConsistentArrowReturn](https://biomejs.dev/linter/rules/use-consistent-arrow-return)
-  in the base preset.
+- Enable new rules in the base preset:
+  - [noUselessCatchBinding](https://biomejs.dev/linter/rules/no-useless-catch-binding)
+  - [useConsistentArrowReturn](https://biomejs.dev/linter/rules/use-consistent-arrow-return)
 
 ### Changed
 - Upgrade Biome to 2.2.3.
@@ -118,9 +118,9 @@ following exceptions:
   as fakes and stubs to 7.
 
 ### Fixed
-- Enable [useHookAtTopLevel](https://biomejs.dev/linter/rules/use-hook-at-top-level)
-  only in the `nextjs` and `react-router` presets, disabling it in the base
-  preset.
+- Enable rules only in the `nextjs` and `react-router` presets, disabling them
+  in the base preset:
+  - [useHookAtTopLevel](https://biomejs.dev/linter/rules/use-hook-at-top-level)
 
 ## [2.0.0] - 2025-08-20
 ### Added
