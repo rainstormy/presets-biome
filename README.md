@@ -83,7 +83,7 @@ override the presets as needed. For example:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
   "extends": [
     "@rainstormy/presets-biome/2.3"
   ],

@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
 	"overrides": [
 		{
 			// Unit test suites, test fixtures (such as fakes and stubs), and module mocks in Vitest.

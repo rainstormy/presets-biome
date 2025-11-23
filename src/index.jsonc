@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -499,6 +499,7 @@
 				"noDuplicateDependencies": "warn",
 				"noEmptySource": "warn",
 				"noFloatingPromises": "warn",
+				"noForIn": "warn",
 				"noImportCycles": "warn",
 				"noIncrementDecrement": "warn", // Prefer consistent increment/decrement operations using += and -= instead of ++ and --.
 				"noJsxLiterals": "off", // Prefer HTML-like string literals over JavaScript string expressions in JSX to reduce noise and improve readability.
@@ -507,6 +508,7 @@
 				"noParametersOnlyUsedInRecursion": "warn",
 				"noReactForwardRef": "off", // Not applicable outside React.
 				"noShadow": "warn",
+				"noSyncScripts": "warn",
 				"noUnknownAttribute": "off", // Not applicable outside React.
 				"noUnnecessaryConditions": "off", // Avoid false positives in switch statements and mutable variables.
 				"noUnresolvedImports": "off", // Rely on module import checks in TypeScript.
@@ -517,11 +519,14 @@
 				"noVueDuplicateKeys": "off", // Not applicable outside Vue.
 				"noVueReservedKeys": "off", // Not applicable outside Vue.
 				"noVueReservedProps": "off", // Not applicable outside Vue.
+				"noVueVIfWithVFor": "off", // Not applicable outside Vue.
 				"useArraySortCompare": "warn",
 				"useConsistentArrowReturn": "warn",
+				"useConsistentGraphqlDescriptions": "warn",
 				"useDeprecatedDate": "warn",
 				"useExhaustiveSwitchCases": "warn",
 				"useExplicitType": "warn",
+				"useFind": "warn",
 				"useMaxParams": "warn",
 				"useQwikMethodUsage": "off", // Not applicable outside Qwik.
 				"useQwikValidLexicalScope": "off", // Not applicable outside Qwik.
@@ -532,8 +537,18 @@
 						"functions": ["clsx", "cn", "cva", "cx", "tw", "tw.*"]
 					}
 				},
+				"useSpread": "warn",
+				"useUniqueGraphqlOperationName": "warn",
 				"useVueDefineMacrosOrder": "off", // Not applicable outside Vue.
-				"useVueMultiWordComponentNames": "off" // Not applicable outside Vue.
+				"useVueHyphenatedAttributes": "off", // Not applicable outside Vue.
+				"useVueMultiWordComponentNames": "off", // Not applicable outside Vue.
+				"useVueValidVBind": "off", // Not applicable outside Vue.
+				"useVueValidVElse": "off", // Not applicable outside Vue.
+				"useVueValidVElseIf": "off", // Not applicable outside Vue.
+				"useVueValidVHtml": "off", // Not applicable outside Vue.
+				"useVueValidVIf": "off", // Not applicable outside Vue.
+				"useVueValidVOn": "off", // Not applicable outside Vue.
+				"useVueValidVText": "off" // Not applicable outside Vue.
 			}
 		}
 	},
