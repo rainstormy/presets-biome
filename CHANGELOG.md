@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.1.2] - 2025-11-23
 ### Strictened
 - Enable new rules in the base preset:
   - [noForIn](https://biomejs.dev/linter/rules/no-for-in)
@@ -20,6 +22,9 @@ following exceptions:
   - [useFind](https://biomejs.dev/linter/rules/use-find)
   - [useSpread](https://biomejs.dev/linter/rules/use-spread)
   - [useUniqueGraphqlOperationName](https://biomejs.dev/linter/rules/use-unique-graphql-operation-name)
+
+### Changed
+- Upgrade Biome to 2.3.7.
 
 ## [2.1.1] - 2025-11-15
 ### Strictened
@@ -167,7 +172,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.1...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.2...HEAD
+[2.1.2]: https://github.com/rainstormy/presets-biome/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/rainstormy/presets-biome/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/rainstormy/presets-biome/compare/v2.0.6...v2.1.0
 [2.0.6]: https://github.com/rainstormy/presets-biome/compare/v2.0.5...v2.0.6
