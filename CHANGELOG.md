@@ -12,6 +12,14 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Strictened
+- Enable new rules in the base preset:
+  - [noForIn](https://biomejs.dev/linter/rules/no-for-in)
+  - [noSyncScripts](https://biomejs.dev/linter/rules/no-sync-scripts)
+  - [useConsistentGraphqlDescriptions](https://biomejs.dev/linter/rules/use-consistent-graphql-descriptions)
+  - [useFind](https://biomejs.dev/linter/rules/use-find)
+  - [useSpread](https://biomejs.dev/linter/rules/use-spread)
+  - [useUniqueGraphqlOperationName](https://biomejs.dev/linter/rules/use-unique-graphql-operation-name)
 
 ## [2.1.1] - 2025-11-15
 ### Strictened
