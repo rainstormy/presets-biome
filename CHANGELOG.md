@@ -12,6 +12,22 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Strictened
+- Enable new rules in the base preset:
+  - [noAmbiguousAnchorText](https://biomejs.dev/linter/rules/no-ambiguous-anchor-text)
+  - [noDuplicatedSpreadProps](https://biomejs.dev/linter/rules/no-duplicated-spread-props)
+  - [noEqualsToNull](https://biomejs.dev/linter/rules/no-equals-to-null)
+  - [noMultiStr](https://biomejs.dev/linter/rules/no-multi-str)
+  - [noProto](https://biomejs.dev/linter/rules/no-proto)
+  - [noScriptUrl](https://biomejs.dev/linter/rules/no-script-url)
+  - [useRegexpExec](https://biomejs.dev/linter/rules/use-regexp-exec)
+  - [useRequiredScripts](https://biomejs.dev/linter/rules/use-required-scripts)
+
+- Enable new rules in the `nextjs` and `react-router` presets:
+  - [noLeakedRender](https://biomejs.dev/linter/rules/no-leaked-render)
+
+### Changed
+- Upgrade Biome to 2.3.10.
 
 ## [2.1.2] - 2025-11-23
 ### Strictened
