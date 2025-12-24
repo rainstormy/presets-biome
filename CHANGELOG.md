@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.1.3] - 2025-12-24
 ### Strictened
 - Enable new rules in the base preset:
   - [noAmbiguousAnchorText](https://biomejs.dev/linter/rules/no-ambiguous-anchor-text)
@@ -188,7 +190,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.2...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.3...HEAD
+[2.1.3]: https://github.com/rainstormy/presets-biome/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/rainstormy/presets-biome/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/rainstormy/presets-biome/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/rainstormy/presets-biome/compare/v2.0.6...v2.1.0
