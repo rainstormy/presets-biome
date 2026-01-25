@@ -12,6 +12,30 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Strictened
+- Enable new rules in the base preset:
+  - [noDivRegex](https://biomejs.dev/linter/rules/no-div-regex)
+  - [noDuplicateArgumentNames](https://biomejs.dev/linter/rules/no-duplicate-argument-names)
+  - [noDuplicateAttributes](https://biomejs.dev/linter/rules/no-duplicate-attributes)
+  - [noDuplicateEnumValueNames](https://biomejs.dev/linter/rules/no-duplicate-enum-value-names)
+  - [noDuplicateEnumValues](https://biomejs.dev/linter/rules/no-duplicate-enum-values)
+  - [noDuplicateFieldDefinitionNames](https://biomejs.dev/linter/rules/no-duplicate-field-definition-names)
+  - [noDuplicateInputFieldNames](https://biomejs.dev/linter/rules/no-duplicate-input-field-names)
+  - [noDuplicateVariableNames](https://biomejs.dev/linter/rules/no-duplicate-variable-names)
+  - [noExcessiveClassesPerFile](https://biomejs.dev/linter/rules/no-excessive-classes-per-file)
+  - [noFloatingClasses](https://biomejs.dev/linter/rules/no-floating-classes)
+  - [noMultiAssign](https://biomejs.dev/linter/rules/no-multi-assign)
+  - [noReturnAssign](https://biomejs.dev/linter/rules/no-return-assign)
+  - [noRootType](https://biomejs.dev/linter/rules/no-root-type)
+  - [useErrorCause](https://biomejs.dev/linter/rules/use-error-cause)
+  - [useLoneAnonymousOperation](https://biomejs.dev/linter/rules/use-lone-anonymous-operation)
+  - [useLoneExecutableDefinition](https://biomejs.dev/linter/rules/use-lone-executable-definition)
+
+- Enable new rules in the `nextjs` preset:
+  - [useInlineScriptId](https://biomejs.dev/linter/rules/use-inline-script-id)
+
+### Changed
+- Upgrade Biome to 2.3.12.
 
 ## [2.1.3] - 2025-12-24
 ### Strictened
@@ -34,12 +58,12 @@ following exceptions:
 ## [2.1.2] - 2025-11-23
 ### Strictened
 - Enable new rules in the base preset:
+  - [noDuplicateGraphqlOperationName](https://biomejs.dev/linter/rules/no-duplicate-graphql-operation-name)
   - [noForIn](https://biomejs.dev/linter/rules/no-for-in)
   - [noSyncScripts](https://biomejs.dev/linter/rules/no-sync-scripts)
   - [useConsistentGraphqlDescriptions](https://biomejs.dev/linter/rules/use-consistent-graphql-descriptions)
   - [useFind](https://biomejs.dev/linter/rules/use-find)
   - [useSpread](https://biomejs.dev/linter/rules/use-spread)
-  - [useUniqueGraphqlOperationName](https://biomejs.dev/linter/rules/use-unique-graphql-operation-name)
 
 ### Changed
 - Upgrade Biome to 2.3.7.

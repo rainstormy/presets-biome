@@ -34,7 +34,7 @@ async function buildFile(filename) {
 		const minifiedOutput = JSON.stringify(fieldsToKeep)
 		await writeFile(destinationPath, minifiedOutput, "utf8")
 	} catch (error) {
-		throw new Error(`${filename}: ${error.message}.`)
+		throw new Error(`${filename}: ${error.message}.`, { cause: error })
 	}
 }
 
