@@ -35,6 +35,7 @@ following exceptions:
   - [useInlineScriptId](https://biomejs.dev/linter/rules/use-inline-script-id)
 
 ### Changed
+- Enable parsing of Tailwind CSS 4 directives.
 - Upgrade Biome to 2.3.12.
 
 ## [2.1.3] - 2025-12-24
