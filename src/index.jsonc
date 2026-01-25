@@ -1,11 +1,14 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.12/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
 		},
 		"linter": {
 			"enabled": true
+		},
+		"parser": {
+			"tailwindDirectives": true
 		}
 	},
 	"grit": {
@@ -495,24 +498,41 @@
 			// the result of `biome migrate`.
 			"nursery": {
 				"noAmbiguousAnchorText": "warn",
+				"noBeforeInteractiveScriptOutsideDocument": "off", // Not applicable outside Next.js.
 				"noContinue": "warn",
 				"noDeprecatedImports": "warn",
+				"noDivRegex": "warn",
+				"noDuplicateArgumentNames": "warn",
+				"noDuplicateAttributes": "warn",
 				"noDuplicateDependencies": "warn",
+				"noDuplicateEnumValueNames": "warn",
+				"noDuplicateEnumValues": "warn",
+				"noDuplicateFieldDefinitionNames": "warn",
+				"noDuplicateGraphqlOperationName": "warn",
+				"noDuplicateInputFieldNames": "warn",
+				"noDuplicateVariableNames": "warn",
 				"noDuplicatedSpreadProps": "warn",
 				"noEmptySource": "warn",
 				"noEqualsToNull": "warn",
+				"noExcessiveClassesPerFile": "warn",
+				"noExcessiveLinesPerFile": "off", // Rely on `lint/complexity/noExcessiveCognitiveComplexity` instead.
+				"noFloatingClasses": "warn",
 				"noFloatingPromises": "warn",
 				"noForIn": "warn",
 				"noImportCycles": "warn",
 				"noIncrementDecrement": "warn", // Prefer consistent increment/decrement operations using += and -= instead of ++ and --.
 				"noJsxLiterals": "off", // Prefer HTML-like string literals over JavaScript string expressions in JSX to reduce noise and improve readability.
+				"noJsxPropsBind": "off", // Not applicable outside React.
 				"noLeakedRender": "off", // Not applicable outside React.
 				"noMisusedPromises": "warn",
+				"noMultiAssign": "warn",
 				"noMultiStr": "warn",
 				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js.
 				"noParametersOnlyUsedInRecursion": "warn",
 				"noProto": "warn",
 				"noReactForwardRef": "off", // Not applicable outside React.
+				"noReturnAssign": "warn",
+				"noRootType": "warn",
 				"noScriptUrl": "warn",
 				"noShadow": "warn",
 				"noSyncScripts": "warn",
@@ -526,6 +546,7 @@
 				"noUselessUndefined": "warn",
 				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue.
 				"noVueDuplicateKeys": "off", // Not applicable outside Vue.
+				"noVueOptionsApi": "off", // Not applicable outside Vue.
 				"noVueReservedKeys": "off", // Not applicable outside Vue.
 				"noVueReservedProps": "off", // Not applicable outside Vue.
 				"noVueSetupPropsReactivityLoss": "off", // Not applicable outside Vue.
@@ -536,9 +557,13 @@
 				"useConsistentGraphqlDescriptions": "warn",
 				"useDeprecatedDate": "warn",
 				"useDestructuring": "off", // Prefer normal property accessors and indexers to optimise IDE tooling capabilities.
+				"useErrorCause": "warn",
 				"useExhaustiveSwitchCases": "warn",
 				"useExplicitType": "warn",
 				"useFind": "warn",
+				"useInlineScriptId": "off", // Not applicable outside Next.js.
+				"useLoneAnonymousOperation": "warn",
+				"useLoneExecutableDefinition": "warn",
 				"useMaxParams": "warn",
 				"useQwikMethodUsage": "off", // Not applicable outside Qwik.
 				"useQwikValidLexicalScope": "off", // Not applicable outside Qwik.
@@ -552,17 +577,25 @@
 					}
 				},
 				"useSpread": "warn",
-				"useUniqueGraphqlOperationName": "warn",
+				"useVueConsistentDefinePropsDeclaration": "off", // Not applicable outside Vue.
+				"useVueConsistentVBindStyle": "off", // Not applicable outside Vue.
+				"useVueConsistentVOnStyle": "off", // Not applicable outside Vue.
 				"useVueDefineMacrosOrder": "off", // Not applicable outside Vue.
 				"useVueHyphenatedAttributes": "off", // Not applicable outside Vue.
 				"useVueMultiWordComponentNames": "off", // Not applicable outside Vue.
+				"useVueVForKey": "off", // Not applicable outside Vue.
+				"useVueValidTemplateRoot": "off", // Not applicable outside Vue.
 				"useVueValidVBind": "off", // Not applicable outside Vue.
+				"useVueValidVCloak": "off", // Not applicable outside Vue.
 				"useVueValidVElse": "off", // Not applicable outside Vue.
 				"useVueValidVElseIf": "off", // Not applicable outside Vue.
 				"useVueValidVHtml": "off", // Not applicable outside Vue.
 				"useVueValidVIf": "off", // Not applicable outside Vue.
 				"useVueValidVOn": "off", // Not applicable outside Vue.
-				"useVueValidVText": "off" // Not applicable outside Vue.
+				"useVueValidVOnce": "off", // Not applicable outside Vue.
+				"useVueValidVPre": "off", // Not applicable outside Vue.
+				"useVueValidVText": "off", // Not applicable outside Vue.
+				"useVueVapor": "off" // Not applicable outside Vue.
 			}
 		}
 	},

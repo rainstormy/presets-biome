@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.12/schema.json",
 	"overrides": [
 		{
 			// React components and hooks.
@@ -20,10 +20,13 @@
 						"noReactSpecificProps": "off" // Allow React-specific props such as `className` and `htmlFor`.
 					},
 					"nursery": {
+						"noBeforeInteractiveScriptOutsideDocument": "off", // Not applicable in the app router.
+						"noJsxPropsBind": "off", // Rely on the React Compiler and avoid `useCallback` pollution and premature optimisation.
 						"noLeakedRender": "warn",
 						"noNextAsyncClientComponent": "warn",
 						"noReactForwardRef": "warn",
-						"noUnknownAttribute": "warn"
+						"noUnknownAttribute": "warn",
+						"useInlineScriptId": "warn"
 					}
 				}
 			}
