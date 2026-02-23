@@ -12,6 +12,17 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+### Strictened
+- Enable new rules in the base preset:
+   - [noDeprecatedMediaType](https://biomejs.dev/linter/rules/no-deprecated-media-type)
+   - [noNestedPromises](https://biomejs.dev/linter/rules/no-nested-promises)
+   - [noRedundantDefaultExport](https://biomejs.dev/linter/rules/no-redundant-default-export)
+   - [noUselessReturn](https://biomejs.dev/linter/rules/no-useless-return)
+   - [useConsistentMethodSignatures](https://biomejs.dev/linter/rules/use-consistent-method-signatures)
+   - [useInputName](https://biomejs.dev/linter/rules/use-input-name)
+
+### Changed
+- Upgrade Biome to 2.3.15.
 
 ## [2.1.4] - 2026-01-25
 ### Strictened

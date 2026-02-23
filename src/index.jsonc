@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.12/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.15/schema.json",
 	"css": {
 		"formatter": {
 			"enabled": true
@@ -501,6 +501,7 @@
 				"noBeforeInteractiveScriptOutsideDocument": "off", // Not applicable outside Next.js.
 				"noContinue": "warn",
 				"noDeprecatedImports": "warn",
+				"noDeprecatedMediaType": "warn",
 				"noDivRegex": "warn",
 				"noDuplicateArgumentNames": "warn",
 				"noDuplicateAttributes": "warn",
@@ -519,6 +520,7 @@
 				"noFloatingClasses": "warn",
 				"noFloatingPromises": "warn",
 				"noForIn": "warn",
+				"noHexColors": "off", // Opt out for compatibility reasons in legacy code.
 				"noImportCycles": "warn",
 				"noIncrementDecrement": "warn", // Prefer consistent increment/decrement operations using += and -= instead of ++ and --.
 				"noJsxLiterals": "off", // Prefer HTML-like string literals over JavaScript string expressions in JSX to reduce noise and improve readability.
@@ -527,10 +529,12 @@
 				"noMisusedPromises": "warn",
 				"noMultiAssign": "warn",
 				"noMultiStr": "warn",
+				"noNestedPromises": "warn",
 				"noNextAsyncClientComponent": "off", // Not applicable outside Next.js.
 				"noParametersOnlyUsedInRecursion": "warn",
 				"noProto": "warn",
 				"noReactForwardRef": "off", // Not applicable outside React.
+				"noRedundantDefaultExport": "warn",
 				"noReturnAssign": "warn",
 				"noRootType": "warn",
 				"noScriptUrl": "warn",
@@ -543,7 +547,9 @@
 				"noUnresolvedImports": "off", // Rely on module import checks in TypeScript.
 				"noUnusedExpressions": "warn",
 				"noUselessCatchBinding": "warn",
+				"noUselessReturn": "warn",
 				"noUselessUndefined": "warn",
+				"noVueArrowFuncInWatch": "off", // Not applicable outside Vue.
 				"noVueDataObjectDeclaration": "off", // Not applicable outside Vue.
 				"noVueDuplicateKeys": "off", // Not applicable outside Vue.
 				"noVueOptionsApi": "off", // Not applicable outside Vue.
@@ -554,14 +560,18 @@
 				"useArraySortCompare": "warn",
 				"useAwaitThenable": "off", // Avoid false positives in `node:fs/promises`.
 				"useConsistentArrowReturn": "warn",
+				"useConsistentEnumValueType": "off", // Not applicable with `lint/style/noEnum`.
 				"useConsistentGraphqlDescriptions": "warn",
+				"useConsistentMethodSignatures": "warn",
 				"useDeprecatedDate": "warn",
 				"useDestructuring": "off", // Prefer normal property accessors and indexers to optimise IDE tooling capabilities.
 				"useErrorCause": "warn",
 				"useExhaustiveSwitchCases": "warn",
 				"useExplicitType": "warn",
 				"useFind": "warn",
+				"useGlobalThis": "off", // Opt out for compatibility reasons in legacy code.
 				"useInlineScriptId": "off", // Not applicable outside Next.js.
+				"useInputName": "warn",
 				"useLoneAnonymousOperation": "warn",
 				"useLoneExecutableDefinition": "warn",
 				"useMaxParams": "warn",
