@@ -83,7 +83,7 @@ override the presets as needed. For example:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.12/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.15/schema.json",
   "extends": [
     "@rainstormy/presets-biome/2.3"
   ],
@@ -242,4 +242,4 @@ insert them directly into your `biome.json` file. Uninstall the
 adjustments to the rules as needed.
 
 - [Biome 2.2.7](https://github.com/rainstormy/presets-biome/blob/main/dist/2.2)
-- [Biome 2.3.0](https://github.com/rainstormy/presets-biome/blob/main/dist/2.3)
+- [Biome 2.3.15](https://github.com/rainstormy/presets-biome/blob/main/dist/2.3)
