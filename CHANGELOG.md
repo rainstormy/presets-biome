@@ -12,6 +12,8 @@ following exceptions:
   Biome to a newer patch version to remain compatible with the presets.
 
 ## [Unreleased]
+
+## [2.1.5] - 2026-02-26
 ### Strictened
 - Enable new rules in the base preset:
    - [noDeprecatedMediaType](https://biomejs.dev/linter/rules/no-deprecated-media-type)
@@ -228,7 +230,8 @@ following exceptions:
   - `@rainstormy/presets-biome/storybook`
   - `@rainstormy/presets-biome/vitest`
 
-[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.4...HEAD
+[unreleased]: https://github.com/rainstormy/presets-biome/compare/v2.1.5...HEAD
+[2.1.5]: https://github.com/rainstormy/presets-biome/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/rainstormy/presets-biome/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/rainstormy/presets-biome/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/rainstormy/presets-biome/compare/v2.1.1...v2.1.2
